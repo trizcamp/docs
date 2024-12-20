@@ -1,0 +1,60 @@
+---
+title: 'Create Insitution Plan'
+description: Endpoint to create Institution Plan
+api: 'POST https://chat.api.toolzz.com.br/api/v1/institutionPlan'
+---
+<Expandable  title="Payload">
+<ResponseField name="unitiesLimit" type="number">
+  Maximum number of organizational units allowed (optional).
+</ResponseField>
+<ResponseField name="botsLimit" type="number">
+  Maximum number of bots allowed (optional).
+</ResponseField>
+<ResponseField name="knowledgeBasesLimit" type="number">
+  Maximum number of knowledge bases allowed (optional).
+</ResponseField>
+<ResponseField name="pluginsLimit" type="number">
+  Maximum number of plugins allowed (optional).
+</ResponseField>
+<ResponseField name="vectorsLimit" type="number">
+  Maximum number of vectors allowed (optional).
+</ResponseField>
+<ResponseField name="widgetsLimit" type="number">
+  Maximum number of widgets allowed (optional).
+</ResponseField>
+</Expandable>
+
+### Response Description 
+Below you will see the description of the Institution Plan response
+
+<ResponseField name="message" type="string" required>
+  The response message indicating the result of the operation.
+</ResponseField>
+<ResponseField name="id" type="uuid">
+  Unique identifier (optional).
+</ResponseField>
+<ResponseField name="institutionId" type="uuid">
+  Identifier of the associated institution (optional).
+</ResponseField>
+<ResponseField name="name" type="string">
+  Name of the entity (optional).
+</ResponseField>
+<ResponseField name="unitiesLimit" type="number">
+  Maximum number of organizational units allowed (optional).
+</ResponseField>
+<ResponseField name="botsLimit" type="number">
+  Maximum number of bots allowed (optional).
+</ResponseField>
+<ResponseField name="knowledgeBasesLimit" type="number">
+  Maximum number of knowledge bases allowed (optional).
+</ResponseField>
+<ResponseField name="pluginsLimit" type="number">
+  Maximum number of plugins allowed (optional).
+</ResponseField>
+<ResponseField name="vectorsLimit" type="number">
+  Maximum number of vectors allowed (optional).
+</ResponseField>
+<ResponseField name="widgetsLimit" type="number">
+  Maximum number of widgets allowed (optional).
+</ResponseField>
+

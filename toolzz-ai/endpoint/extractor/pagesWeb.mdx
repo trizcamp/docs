@@ -1,0 +1,62 @@
+---
+title: 'Extract Pages'
+description: Endpoint to extract pages from URL
+api: 'POST https://api/v2/extractor/web-scraper'
+---
+<Expandable title="Payload">
+<ResponseField name="unityId" type="uuid" required>
+  UUID of the associated unity.
+</ResponseField>
+<ResponseField name="datasetId" type="uuid" required>
+  UUID of the dataset associated with the operation.
+</ResponseField>
+<ResponseField name="url" type="string" required>
+  URL for the dataset or resource.
+</ResponseField>
+<ResponseField name="limit" type="number" required>
+  Limit for the number of items or results to retrieve.
+</ResponseField>
+</Expandable>
+
+<RequestExample>
+```json Payload Example
+{
+  "unityId": "<uuid>",
+  "datasetId": "<uuid>",
+  "url": "https://www.toolzz.com.br/home#b_386227_1_45971",
+  "limit": 5
+}
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Extract video content response
+
+<ResponseField name="message" type="string" required>
+  Indicates the status or result of the web content upload process.
+</ResponseField>
+<ResponseField name="url" type="string" required>
+  The primary URL associated with the uploaded content.
+</ResponseField>
+<ResponseField name="urls" type="object" required>
+  <Expandable title="Pages">
+    <ResponseField name="page1" type="string" required>
+      URL for "Page1"
+    </ResponseField>
+    <ResponseField name="page2" type="string" required>
+      URL for "Page2"
+    </ResponseField>
+    <ResponseField name="page3" type="string" required>
+      URL for "Page3"
+    </ResponseField>
+    <ResponseField name="page4" type="string" required>
+      URL for "Page4"
+    </ResponseField>
+    <ResponseField name="page5" type="string" required>
+      URL for "Page5"
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="content" type="string" required>
+  The textual content of the uploaded web resource.
+</ResponseField>

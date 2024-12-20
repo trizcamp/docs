@@ -1,0 +1,39 @@
+---
+title: 'Update Subscription'
+description: Endpoint to Update Subscription
+api: 'PUT https://chat.api.toolzz.com.br/api/v2/billing/subscription/update'
+---
+<Expandable  title="Payload">
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the institution.
+</ResponseField>
+<ResponseField name="quantity" type="number" required>
+  Quantity associated with the request.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the Subscription update response
+
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the record.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the associated institution.
+</ResponseField>
+<ResponseField name="message" type="string" required>
+  Message describing the status or details of the operation.
+</ResponseField>
+<ResponseField name="user" type="SubscriptionUser" required>
+  Details of the user associated with the subscription.
+</ResponseField>
+<ResponseField name="subscriptionId" type="uuid">
+  Identifier of the subscription, if applicable.
+</ResponseField>
+<ResponseField name="customerId" type="uuid">
+  Identifier of the customer, if applicable.
+</ResponseField>
+<ResponseField name="subscription" type="any">
+  Additional subscription details, if available.
+</ResponseField>

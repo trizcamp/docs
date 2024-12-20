@@ -1,0 +1,78 @@
+---
+title: 'Delete Member'
+api: 'DELETE https://chat.api.toolzz.com.br/api/v2/member/id/{id}'
+---
+<Warning>User needs to be admin of institution</Warning>
+## Response Description 
+Below you will see the description of the member response
+
+<ResponseField name="message" type="string" required>
+  Message indicating the result of the operation.
+</ResponseField>
+<ResponseField name="id" type="string" required>
+  Unique identifier of the member.
+</ResponseField>
+<ResponseField name="institutionId" type="string" required>
+  ID of the associated institution.
+</ResponseField>
+<ResponseField name="unityId" type="string" required>
+  ID of the associated unity.
+</ResponseField>
+<ResponseField name="userId" type="string">
+  Optional ID of the associated user.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the member.
+</ResponseField>
+<ResponseField name="email" type="string" required>
+  Email address of the member.
+</ResponseField>
+<ResponseField name="access" type="string" required>
+  Access level of the member.
+  <Expandable title="Allowed values">
+    <ResponseField name="MANAGER" type="string">
+      Access level for managing operations.
+    </ResponseField>
+    <ResponseField name="ADMIN" type="string">
+      Access level for administrative control.
+    </ResponseField>
+    <ResponseField name="USER" type="string">
+      Access level for general users.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="status" type="number" required>
+  Status indicator, 1 for active, 0 for inactive.
+</ResponseField>
+<ResponseField name="acceptedAt" type="string" required>
+  Timestamp indicating when the member was accepted.
+</ResponseField>
+<ResponseField name="createdAt" type="string" required>
+  Timestamp indicating when the record was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="string" required>
+  Timestamp indicating when the record was last updated.
+</ResponseField>
+<ResponseField name="user" type="object">
+  Details of the associated user (null if not available).
+  <Expandable title="User properties">
+    <ResponseField name="id" type="string">
+      Unique identifier of the user.
+    </ResponseField>
+    <ResponseField name="name" type="string">
+      Name of the user.
+    </ResponseField>
+    <ResponseField name="email" type="string">
+      Email address of the user.
+    </ResponseField>
+    <ResponseField name="verified" type="boolean">
+      Indicates if the user's email is verified.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+
+<ResponseField name="message" type="string" required>
+  Successful message
+</ResponseField>

@@ -1,0 +1,44 @@
+---
+title: 'Update Account'
+description: Endpoint to Update Account Settings
+api: 'PUT https://chat.api.toolzz.com.br/api/v1/auth/update/{id}'
+authorization: none
+---
+<RequestExample>
+
+```json Request
+  {
+    "name": "<string>",
+    "lastName": "<string>",
+    "phone": "<string>",
+    "imgProfileId": "<uuid>"
+}
+```
+</RequestExample>
+
+
+## Response Description 
+Below you will see the description of the Update Account response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the user.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  First name of the user.
+</ResponseField>
+<ResponseField name="lastName" type="string" required>
+  Last name of the user.
+</ResponseField>
+<ResponseField name="email" type="string" required>
+  Email address of the user.
+</ResponseField>
+<ResponseField name="phone" type="string">
+  Phone number of the user (optional).
+</ResponseField>
+<ResponseField name="imgProfileId" type="uuid">
+  Identifier of the user's profile image (optional).
+</ResponseField>
+<ResponseField name="imgProfile" type="array">
+  Array containing details about the user's profile image (optional).
+</ResponseField>
+

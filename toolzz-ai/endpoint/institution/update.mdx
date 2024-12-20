@@ -1,0 +1,139 @@
+---
+title: 'Update Insitution'
+description: Endpoint to get a institution by id
+api: 'PUT  https://chat.api.toolzz.com.br/api/v1/institution/'
+---
+<Expandable  title="Payload">
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the institution.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the institution.
+</ResponseField>
+<ResponseField name="cnpj" type="string">
+  CNPJ (Cadastro Nacional da Pessoa Jurídica) of the institution (optional).
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the institution.
+</ResponseField>
+<ResponseField name="subdomain" type="string" required>
+  Subdomain associated with the institution.
+</ResponseField>
+<ResponseField name="customDomain" type="string">
+  Custom domain for the institution (optional).
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the member response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the institution.
+</ResponseField>
+<ResponseField name="subdomain" type="string" required>
+  Subdomain associated with the institution.
+</ResponseField>
+<ResponseField name="customDomain" type="string">
+  Custom domain for the institution (optional).
+</ResponseField>
+<ResponseField name="userId" type="uuid" required>
+  Identifier of the associated user.
+</ResponseField>
+<ResponseField name="cnpj" type="string">
+  CNPJ (Cadastro Nacional da Pessoa Jurídica) of the institution (optional).
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the institution.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the institution.
+</ResponseField>
+<ResponseField name="safetyPlan" type="boolean" required>
+  Indicates if the safety plan is active.
+</ResponseField>
+<ResponseField name="adminId" type="uuid" required>
+  Identifier of the administrator associated with the institution.
+</ResponseField>
+<ResponseField name="customerId" type="string" required>
+  Identifier of the associated customer.
+</ResponseField>
+<ResponseField name="subscriptionId" type="string" required>
+  Identifier of the subscription plan.
+</ResponseField>
+<ResponseField name="isActive" type="boolean" required>
+  Indicates if the institution is active.
+</ResponseField>
+<ResponseField name="manualPayment" type="boolean" required>
+  Indicates if manual payment is enabled.
+</ResponseField>
+<ResponseField name="institutionPlan" type="array" required>
+  <Expandable title="properties">
+    <ResponseField name="id" type="uuid" required>
+      Unique identifier of the institution plan.
+    </ResponseField>
+    <ResponseField name="unitiesLimit" type="number" required>
+      Maximum number of organizational units allowed.
+    </ResponseField>
+    <ResponseField name="botsLimit" type="number" required>
+      Maximum number of bots allowed.
+    </ResponseField>
+    <ResponseField name="widgetsLimit" type="number" required>
+      Maximum number of widgets allowed.
+    </ResponseField>
+    <ResponseField name="knowledgeBasesLimit" type="number" required>
+      Maximum number of knowledge bases allowed.
+    </ResponseField>
+    <ResponseField name="pluginsLimit" type="number" required>
+      Maximum number of plugins allowed.
+    </ResponseField>
+    <ResponseField name="vectorsLimit" type="number" required>
+      Maximum number of vectors allowed.
+    </ResponseField>
+    <ResponseField name="isMagic" type="boolean" required>
+      Indicates if the magic feature is enabled.
+    </ResponseField>
+    <ResponseField name="hasMonetizationAddon" type="boolean" required>
+      Indicates if the monetization addon is enabled.
+    </ResponseField>
+    <ResponseField name="hasAnalyticsAddon" type="boolean" required>
+      Indicates if the analytics addon is enabled.
+    </ResponseField>
+    <ResponseField name="createdAt" type="datetime" required>
+      Date and time when the institution plan was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="datetime" required>
+      Date and time when the institution plan was last updated.
+    </ResponseField>
+    <ResponseField name="institutionId" type="uuid" required>
+      Identifier of the associated institution.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="indexServiceId" type="uuid" required>
+  Identifier of the index service.
+</ResponseField>
+<ResponseField name="indexService" type="object" required>
+  <Expandable title="properties">
+    <ResponseField name="id" type="uuid" required>
+      Unique identifier of the index service.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the index service.
+    </ResponseField>
+    <ResponseField name="adminKey" type="string" required>
+      Administrative key for the index service.
+    </ResponseField>
+    <ResponseField name="searchKey" type="string" required>
+      Search key for the index service.
+    </ResponseField>
+    <ResponseField name="indexCounter" type="number" required>
+      Number of indices created in the index service.
+    </ResponseField>
+    <ResponseField name="createdAt" type="datetime" required>
+      Date and time when the index service was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="datetime" required>
+      Date and time when the index service was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

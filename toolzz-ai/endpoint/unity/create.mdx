@@ -1,0 +1,39 @@
+---
+title: 'Create Unity'
+description: Endpoint to create Unity
+api: 'POST https://chat.api.toolzz.com.br/api/v1/unity/'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the bot response
+
+<RequestExample>
+
+```json Payload Example
+  "name": <string>
+```
+</RequestExample>
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier for the unity.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  ID of the associated institution.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the unity.
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Activation status of the unity.
+</ResponseField>
+<ResponseField name="credentialProjectId" type="uuid" required>
+  Credential project ID associated with the unity.
+</ResponseField>
+
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

@@ -1,0 +1,199 @@
+---
+title: 'Create Widget'
+description: Endpoint to create Widget
+api: 'POST https://chat.api.toolzz.com.br/api/v1/widget{id}'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the bot response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the widget.
+</ResponseField>
+<ResponseField name="institutionId" type="string" required>
+  ID of the associated institution.
+</ResponseField>
+<ResponseField name="title" type="string" required>
+  Title of the widget.
+</ResponseField>
+<ResponseField name="subTitle" type="string" required>
+  Subtitle of the widget.
+</ResponseField>
+<ResponseField name="headerIconFileId" type="string">
+  Optional ID of the header icon file.
+</ResponseField>
+<ResponseField name="primaryColor" type="string" required>
+  Primary color configuration for the widget.
+</ResponseField>
+<ResponseField name="secondaryColor" type="string" required>
+  Secondary color configuration for the widget.
+</ResponseField>
+<ResponseField name="widgetIconFileId" type="string">
+  Optional ID of the widget icon file.
+</ResponseField>
+<ResponseField name="primaryAIColor" type="string" required>
+  Primary AI color setting.
+</ResponseField>
+<ResponseField name="secondaryAIColor" type="string" required>
+  Secondary AI color setting.
+</ResponseField>
+<ResponseField name="avatarIconFileId" type="string">
+  Optional ID of the avatar icon file.
+</ResponseField>
+<ResponseField name="aiFirstMessage" type="string" required>
+  Initial message displayed by the AI.
+</ResponseField>
+<ResponseField name="primaryUserColor" type="string" required>
+  Primary user color configuration.
+</ResponseField>
+<ResponseField name="secondaryUserColor" type="string" required>
+  Secondary user color configuration.
+</ResponseField>
+<ResponseField name="audioVoice" type="string">
+  Optional audio voice setting.
+</ResponseField>
+<ResponseField name="voiceActive" type="boolean">
+  Indicates if voice functionality is active.
+</ResponseField>
+<ResponseField name="defaultMessages" type="array">
+  List of default messages for the widget.
+</ResponseField>
+
+<ResponseField name="Bot" type="object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier of the bot.
+    </ResponseField>
+    <ResponseField name="creatorId" type="string" required>
+      ID of the bot creator.
+    </ResponseField>
+    <ResponseField name="institutionId" type="string" required>
+      ID of the associated institution.
+    </ResponseField>
+    <ResponseField name="unityId" type="string" required>
+      ID of the associated unity.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the bot.
+    </ResponseField>
+    <ResponseField name="description" type="string" required>
+      Description of the bot's purpose.
+    </ResponseField>
+    <ResponseField name="iconFileId" type="string">
+      Optional icon file ID.
+    </ResponseField>
+    <ResponseField name="creativePrecision" type="number" required>
+      Precision level for the bot's creative responses.
+    </ResponseField>
+    <ResponseField name="prompt" type="string" required>
+      Instructions defining the bot's behavior and personality.
+    </ResponseField>
+    <ResponseField name="metaprompt" type="string">
+      Additional customization settings for bot responses.
+    </ResponseField>
+    <ResponseField name="tags" type="array">
+      List of tags associated with the bot.
+    </ResponseField>
+    <ResponseField name="safeMode" type="boolean">
+      Indicates if safe mode is active.
+    </ResponseField>
+    <ResponseField name="isActivated" type="boolean" required>
+      Activation status of the bot.
+    </ResponseField>
+    <ResponseField name="progressStatus" type="string">
+      Status of the bot's progress.
+    </ResponseField>
+    <ResponseField name="hasMonetization" type="boolean">
+      Indicates if monetization is enabled for the bot.
+    </ResponseField>
+    <ResponseField name="hasAnalytics" type="boolean">
+      Indicates if analytics are active for the bot.
+    </ResponseField>
+    <ResponseField name="hasPlugins" type="boolean">
+      Indicates if the bot has plugins enabled.
+    </ResponseField>
+    <ResponseField name="hasTools" type="boolean">
+      Indicates if tools are enabled for the bot.
+    </ResponseField>
+    <ResponseField name="isAdvancedBot" type="boolean">
+      Specifies if the bot is advanced.
+    </ResponseField>
+    <ResponseField name="botGenAI" type="array">
+      List of generative AI configurations for the bot.
+    </ResponseField>
+    <ResponseField name="botMonetization" type="object">
+      <Expandable title="properties">
+        <ResponseField name="id" type="string" required>
+          Unique identifier for monetization settings.
+        </ResponseField>
+        <ResponseField name="credentialId" type="string">
+          Optional credential ID.
+        </ResponseField>
+        <ResponseField name="coin" type="string" required>
+          Currency used for monetization.
+        </ResponseField>
+        <ResponseField name="price" type="number" required>
+          Price associated with the monetization plan.
+        </ResponseField>
+        <ResponseField name="timeTest" type="number">
+          Time limit for trial usage.
+        </ResponseField>
+        <ResponseField name="recurring" type="string">
+          Recurrence interval for the plan.
+        </ResponseField>
+        <ResponseField name="featuredProduct" type="boolean">
+          Indicates if this is a featured product.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="unity" type="object">
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier of the unity.
+    </ResponseField>
+    <ResponseField name="institutionId" type="string" required>
+      ID of the associated institution.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the unity.
+    </ResponseField>
+    <ResponseField name="isActivated" type="boolean" required>
+      Activation status of the unity.
+    </ResponseField>
+    <ResponseField name="credentialProjectId" type="string" required>
+      Project credential ID associated with the unity.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="headerIcon" type="string">
+  Optional header icon details.
+</ResponseField>
+<ResponseField name="widgetIcon" type="string">
+  Optional widget icon details.
+</ResponseField>
+<ResponseField name="avatarIcon" type="string">
+  Optional avatar icon details.
+</ResponseField>
+<ResponseField name="isPublic" type="boolean" required>
+  Indicates if the widget is public.
+</ResponseField>
+<ResponseField name="isActive" type="boolean" required>
+  Indicates if the widget is active.
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Activation status of the widget.
+</ResponseField>
+<ResponseField name="favorites" type="array">
+  List of users who have marked the widget as a favorite.
+</ResponseField>
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

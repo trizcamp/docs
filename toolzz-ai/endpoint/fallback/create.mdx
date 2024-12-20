@@ -1,0 +1,176 @@
+---
+title: 'Create Fallback'
+description: Endpoint to create Fallback
+api: 'POST https://chat.api.toolzz.com.br/api/v1/bot/configuration/fallback'
+---
+<Warning>User must contain a credential that is not being used by the bot</Warning>
+
+<Expandable title="Payload">
+<ResponseField name="botId" type="uuid" required>
+  Unique identifier of the bot.
+</ResponseField>
+<ResponseField name="fallBacks" type="array" required>
+  List of fallback configurations for the bot.
+</ResponseField>
+<ResponseField name="fallBacks[].order" type="integer" required>
+  The order of the fallback configuration in the list.
+</ResponseField>
+<ResponseField name="fallBacks[].credentialId" type="uuid" required>
+  Unique identifier of the credential used for the fallback.
+</ResponseField>
+<ResponseField name="fallBacks[].model" type="string" required>
+  The model name used for the fallback.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the Fallback creation response
+
+<ResponseField name="items" type="array" required>
+  List of configurations.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the configuration.
+    </ResponseField>
+    <ResponseField name="botId" type="string" required>
+      ID of the associated bot.
+    </ResponseField>
+    <ResponseField name="order" type="number" required>
+      Order or priority of the configuration.
+    </ResponseField>
+    <ResponseField name="credentialId" type="string" required>
+      ID of the associated credential.
+    </ResponseField>
+    <ResponseField name="model" type="string" required>
+      Model name used in the configuration.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Date and time when the configuration was created.
+    </ResponseField>
+
+    <ResponseField name="credential" type="object" required>
+      Credential details associated with the configuration.
+      <Expandable title="properties">
+        <ResponseField name="id" type="string" required>
+          Unique identifier for the credential.
+        </ResponseField>
+        <ResponseField name="name" type="string" required>
+          Name of the credential.
+        </ResponseField>
+        <ResponseField name="userId" type="string" required>
+          ID of the user associated with the credential.
+        </ResponseField>
+        <ResponseField name="unityId" type="string" required>
+          ID of the unity associated with the credential.
+        </ResponseField>
+        <ResponseField name="integrationId" type="string" required>
+          ID of the integration linked to the credential.
+        </ResponseField>
+        <ResponseField name="secretId" type="string" required>
+          Secret ID for the credential.
+        </ResponseField>
+        <ResponseField name="status" type="boolean" required>
+          Indicates if the credential is active.
+        </ResponseField>
+        <ResponseField name="virtualKey" type="string">
+          Virtual key associated with the credential.
+        </ResponseField>
+        <ResponseField name="createdAt" type="Date" required>
+          Date and time when the credential was created.
+        </ResponseField>
+        <ResponseField name="updatedAt" type="Date">
+          Date and time when the credential was last updated.
+        </ResponseField>
+
+        <ResponseField name="integration" type="object" required>
+          Details of the integration linked to the credential.
+          <Expandable title="properties">
+            <ResponseField name="id" type="string" required>
+              Unique identifier for the integration.
+            </ResponseField>
+            <ResponseField name="name" type="string" required>
+              Name of the integration.
+            </ResponseField>
+            <ResponseField name="iconId" type="string" required>
+              ID of the icon associated with the integration.
+            </ResponseField>
+            <ResponseField name="type" type="string" required>
+              Type of the integration (e.g., LLM).
+            </ResponseField>
+            <ResponseField name="form" type="array">
+              Configuration fields required by the integration.
+              <Expandable title="properties">
+                <ResponseField name="name" type="string" required>
+                  Name of the field (e.g., API key).
+                </ResponseField>
+                <ResponseField name="type" type="string" required>
+                  Data type of the field.
+                </ResponseField>
+                <ResponseField name="label" type="string" required>
+                  Label for the field.
+                </ResponseField>
+                <ResponseField name="maxLenght" type="string">
+                  Maximum length of the field value.
+                </ResponseField>
+                <ResponseField name="required" type="boolean" required>
+                  Indicates if the field is required.
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+            <ResponseField name="status" type="boolean" required>
+              Indicates if the integration is active.
+            </ResponseField>
+            <ResponseField name="createdAt" type="Date" required>
+              Date and time when the integration was created.
+            </ResponseField>
+            <ResponseField name="updatedAt" type="Date">
+              Date and time when the integration was last updated.
+            </ResponseField>
+            <ResponseField name="slug" type="string">
+              Slug identifier for the integration.
+            </ResponseField>
+
+            <ResponseField name="file" type="object" required>
+              File details associated with the integration.
+              <Expandable title="properties">
+                <ResponseField name="id" type="string" required>
+                  Unique identifier for the file.
+                </ResponseField>
+                <ResponseField name="createdAt" type="Date" required>
+                  Date and time when the file was created.
+                </ResponseField>
+                <ResponseField name="updatedAt" type="Date">
+                  Date and time when the file was last updated.
+                </ResponseField>
+                <ResponseField name="institutionId" type="string" required>
+                  ID of the institution associated with the file.
+                </ResponseField>
+                <ResponseField name="type" type="string" required>
+                  Type of the file (e.g., WidgetHeaderIcon).
+                </ResponseField>
+                <ResponseField name="fileName" type="string" required>
+                  Name of the file.
+                </ResponseField>
+                <ResponseField name="internalStorageUrl" type="string" required>
+                  Internal storage URL for the file.
+                </ResponseField>
+                <ResponseField name="url" type="string" required>
+                  Public URL for the file.
+                </ResponseField>
+                <ResponseField name="size" type="number" required>
+                  Size of the file in bytes.
+                </ResponseField>
+                <ResponseField name="extension" type="string" required>
+                  File extension (e.g., png).
+                </ResponseField>
+                <ResponseField name="maskName" type="string">
+                  Optional mask name for the file.
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>

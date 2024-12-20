@@ -1,0 +1,60 @@
+---
+title: 'Get Bot By Unity'
+description: Endpoint para criar um bot por unidade
+api: 'GET https://chat.api.toolzz.com.br/api/v1/bot/unity/'
+---
+
+### Response Description 
+
+<ResponseField name="id?" type="string" required>
+  ID único do Bot
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Nome do Bot
+</ResponseField>
+<ResponseField name="prompt" type="string" required>
+  Texto ou comando utilizado como entrada para o bot.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Descrição detalhada sobre a finalidade ou funcionamento do bot.
+</ResponseField>
+<ResponseField name="folders" type="any[]" required>
+  Lista de pastas associadas ao bot.
+</ResponseField>
+<ResponseField name="plugins" type="any[]" required>
+  Plugins ou integrações ativas no bot.
+</ResponseField>
+<ResponseField name="botGenAI" type="any" required>
+  Configurações relacionadas à inteligência artificial do bot.
+</ResponseField>
+<ResponseField name="assistantId" type="string" required>
+  ID exclusivo do assistente vinculado.
+</ResponseField>
+<ResponseField name="IconFile" type="any" required>
+  Arquivo de ícone associado ao bot.
+</ResponseField>
+<ResponseField name="widgetId" type="string">
+  ID opcional do widget vinculado.
+</ResponseField>
+<ResponseField name="tags" type="string[]">
+  Lista de tags associadas ao bot.
+</ResponseField>
+<ResponseField name="unityId" type="string">
+  ID da unidade organizacional.
+</ResponseField>
+<ResponseField name="progressStatus" type="string">
+  Status de progresso do bot.
+</ResponseField>
+<ResponseField name="safeMode" type="boolean">
+  Modo seguro ativado ou não.
+</ResponseField>
+<ResponseField name="institutionId" type="string" required>
+  ID da instituição responsável pelo bot.
+</ResponseField>
+<ResponseField name="indexService" type="string">
+  Serviço de indexação vinculado ao bot.
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Status de ativação do bot.
+</ResponseField>
+

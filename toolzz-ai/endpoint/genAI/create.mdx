@@ -1,0 +1,29 @@
+---
+title: 'Create GenAI'
+description: Endpoint to create GenAI
+api: 'POST https://chat.api.toolzz.com.br/api/v1/genAI/'
+authorization: none
+---
+
+<Expandable title="Payload">
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="hasAssistant" type="boolean">
+  Indicates whether the entity has an assistant (optional).
+</ResponseField>
+</Expandable>
+
+
+## Response Description 
+Below you will see the description of the bot response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="hasAssistant" type="boolean" required>
+  Indicates whether the entity has an assistant.
+</ResponseField>

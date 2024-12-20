@@ -1,0 +1,49 @@
+---
+title: 'Create KnowledgeBase'
+description: Endpoint to create KnowledgeBase 
+api: 'POST https://chat.api.toolzz.com.br/api/v1/functions/'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the KnowledgeBase creation response
+
+<RequestExample>
+
+```json Request
+{
+  "name": "<string>",
+  "description": "<string>",
+  "unityId": "<uuid>"
+}
+```
+</RequestExample>
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the knowledge base.
+</ResponseField>
+<ResponseField name="title" type="string" required>
+  Title of the knowledge base.
+</ResponseField>
+<ResponseField name="description" type="string">
+  Description of the knowledge base.
+</ResponseField>
+<ResponseField name="documentCount" type="number" required>
+  Number of documents in the knowledge base.
+</ResponseField>
+<ResponseField name="wordCount" type="number" required>
+  Total word count of all documents in the knowledge base.
+</ResponseField>
+<ResponseField name="icon" type="string">
+  URL of the knowledge base icon.
+</ResponseField>
+<ResponseField name="status" type="number" required>
+  Status of the knowledge base (e.g., 1 for active).
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Indicates whether the knowledge base is activated.
+</ResponseField>
+
+
+
+

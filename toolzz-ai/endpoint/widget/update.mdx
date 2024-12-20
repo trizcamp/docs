@@ -1,0 +1,76 @@
+---
+title: 'Update Widget'
+description: Endpoint to Update Widget
+api: 'PUT https://chat.api.toolzz.com.br/api/v1/widget{id}'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the widget update response
+
+
+<ResponseField name="id" type="string" required>
+  Unique identifier, must be a valid UUID.
+</ResponseField>
+<ResponseField name="botId" type="string">
+  Optional ID of the bot, must be a valid UUID.
+</ResponseField>
+<ResponseField name="title" type="string" required>
+  Title of the widget.
+</ResponseField>
+<ResponseField name="subTitle" type="string" required>
+  Subtitle of the widget.
+</ResponseField>
+<ResponseField name="headerIconFileId" type="string">
+  Optional ID of the header icon file, must be a valid UUID.
+</ResponseField>
+<ResponseField name="primaryColor" type="string" required>
+  Primary color configuration for the widget.
+</ResponseField>
+<ResponseField name="secondaryColor" type="string" required>
+  Secondary color configuration for the widget.
+</ResponseField>
+<ResponseField name="widgetIconFileId" type="string">
+  Optional ID of the widget icon file, must be a valid UUID.
+</ResponseField>
+<ResponseField name="primaryAIColor" type="string" required>
+  Primary AI color setting.
+</ResponseField>
+<ResponseField name="secondaryAIColor" type="string" required>
+  Secondary AI color setting.
+</ResponseField>
+<ResponseField name="avatarIconFileId" type="string">
+  Optional ID of the avatar icon file, must be a valid UUID.
+</ResponseField>
+<ResponseField name="aiFirstMessage" type="string" required>
+  First message displayed by the AI.
+</ResponseField>
+<ResponseField name="primaryUserColor" type="string" required>
+  Primary user color configuration.
+</ResponseField>
+<ResponseField name="secondaryUserColor" type="string" required>
+  Secondary user color configuration.
+</ResponseField>
+<ResponseField name="audioVoice" type="string">
+  Optional audio voice setting.
+</ResponseField>
+<ResponseField name="voiceActive" type="boolean">
+  Indicates if voice functionality is active (optional).
+</ResponseField>
+<ResponseField name="defaultMessages" type="array">
+  List of default messages for the widget.
+  <Expandable title="items">
+    <ResponseField name="text" type="string">
+      Optional text content of a default message.
+    </ResponseField>
+    <ResponseField name="position" type="number">
+      Optional position value of a default message.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

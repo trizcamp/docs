@@ -1,0 +1,48 @@
+---
+title: 'Create Subscription Item'
+description: Endpoint to create Subscription
+api: 'POST https://chat.api.toolzz.com.br/api/v2/billing/subscription/items'
+---
+
+## Response Description 
+Below you will see the description of the Subscription Item response
+
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the associated institution.
+</ResponseField>
+<ResponseField name="data" type="object" required>
+  <Expandable title="Plan Data">
+    <ResponseField name="unitysLimit" type="number">
+      Limit for the number of unities (optional).
+    </ResponseField>
+    <ResponseField name="botsLimit" type="number">
+      Limit for the number of bots (optional).
+    </ResponseField>
+    <ResponseField name="widgetsLimit" type="number">
+      Limit for the number of widgets (optional).
+    </ResponseField>
+    <ResponseField name="knowledgebasesLimit" type="number">
+      Limit for the number of knowledge bases (optional).
+    </ResponseField>
+    <ResponseField name="pluginsLimit" type="number">
+      Limit for the number of plugins (optional).
+    </ResponseField>
+    <ResponseField name="vectorsLimit" type="number">
+      Limit for the number of vectors (optional).
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="newItems" type="array" required>
+  List of new items to be added.
+  <Expandable title="New Item Properties">
+    <ResponseField name="id" type="uuid" required>
+      Unique identifier for the item.
+    </ResponseField>
+    <ResponseField name="type" type="string" required>
+      Type of the item.
+    </ResponseField>
+    <ResponseField name="priceId" type="uuid" required>
+      Identifier of the price associated with the item.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

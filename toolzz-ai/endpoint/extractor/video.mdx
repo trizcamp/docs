@@ -1,0 +1,103 @@
+---
+title: 'Extractor Video'
+description: Endpoint to extract videos content 
+api: 'POST https:/api/v2/extractor/youtube'
+---
+
+<RequestExample>
+```json Payload Example
+  {
+	"unityId": "<uuid>", 
+	"datasetId": "<uuid>"
+	"folderId": "<uuid>",
+	"urls": ["https://youtu.be.com"]
+  }
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Extract video content response
+
+<ResponseField name="message" type="string" required>
+  Status message for the operation.
+</ResponseField>
+<ResponseField name="urls" type="array" required>
+  List of URLs for the uploaded content.
+  <Expandable title="properties">
+    <ResponseField name="url" type="string" required>
+      URL of the uploaded content.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="files" type="array" required>
+  List of files associated with the uploaded content.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the file.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Date and time when the file was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date">
+      Date and time when the file was last updated.
+    </ResponseField>
+    <ResponseField name="institutionId" type="string" required>
+      ID of the institution associated with the file.
+    </ResponseField>
+    <ResponseField name="fileName" type="string" required>
+      Name of the file.
+    </ResponseField>
+    <ResponseField name="internalStorageUrl" type="string" required>
+      Internal storage URL for the file.
+    </ResponseField>
+    <ResponseField name="url" type="string" required>
+      Public URL for the file.
+    </ResponseField>
+    <ResponseField name="size" type="number" required>
+      Size of the file in bytes.
+    </ResponseField>
+    <ResponseField name="extension" type="string" required>
+      File extension (e.g., txt).
+    </ResponseField>
+    <ResponseField name="maskName" type="string" required>
+      Masked name for the file.
+    </ResponseField>
+    <ResponseField name="knowLedgeBaseId" type="string" required>
+      ID of the knowledge base associated with the file.
+    </ResponseField>
+    <ResponseField name="kbFolderId" type="string" required>
+      ID of the knowledge base folder associated with the file.
+    </ResponseField>
+    <ResponseField name="integrationId" type="string">
+      ID of the integration associated with the file (if any).
+    </ResponseField>
+    <ResponseField name="customData" type="array" required>
+      Custom data associated with the file.
+      <Expandable title="properties">
+        <ResponseField name="id" type="string" required>
+          Identifier from the custom data.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="folder" type="object" required>
+  Details of the folder associated with the uploaded content.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the folder.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the folder.
+    </ResponseField>
+    <ResponseField name="knowLedgeBaseId" type="string" required>
+      ID of the knowledge base associated with the folder.
+    </ResponseField>
+    <ResponseField name="isRoot" type="boolean" required>
+      Indicates whether the folder is a root folder.
+    </ResponseField>
+    <ResponseField name="institutionId" type="string" required>
+      ID of the institution associated with the folder.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

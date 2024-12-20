@@ -1,0 +1,57 @@
+---
+title: 'Get Insitution Plan'
+description: Endpoint to get a institution by id
+api: 'GET https://chat.api.toolzz.com.br/api/v1//institutionPlan/{id}'
+---
+
+### Response Description 
+The endpoint returns a response in JSON format with a confirmation response to the request.
+
+<ResponseField name="message" type="string" required>
+  Message providing information about the response.
+</ResponseField>
+<ResponseField name="id" type="uuid">
+  Unique identifier of the resource (optional).
+</ResponseField>
+<ResponseField name="institutionId" type="uuid">
+  Identifier of the associated institution (optional).
+</ResponseField>
+<ResponseField name="name" type="string">
+  Name of the resource (optional).
+</ResponseField>
+<ResponseField name="unitiesLimit" type="number">
+  Maximum number of organizational units allowed (optional).
+</ResponseField>
+<ResponseField name="botsLimit" type="number">
+  Maximum number of bots allowed (optional).
+</ResponseField>
+<ResponseField name="knowledgeBasesLimit" type="number">
+  Maximum number of knowledge bases allowed (optional).
+</ResponseField>
+<ResponseField name="pluginsLimit" type="number">
+  Maximum number of plugins allowed (optional).
+</ResponseField>
+<ResponseField name="vectorsLimit" type="number">
+  Maximum number of vectors allowed (optional).
+</ResponseField>
+<ResponseField name="widgetsLimit" type="number">
+  Maximum number of widgets allowed (optional).
+</ResponseField>
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+### Errors
+Exemples of security error
+  <Expandable title="error 🚦">
+    <ResponseField name="200" type="string">
+      Request Successful Response
+    </ResponseField>
+
+    <ResponseField name="400" type="string">
+      Request Failure
+    </ResponseField>
+  </Expandable>
+
+

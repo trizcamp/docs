@@ -1,0 +1,31 @@
+---
+title: 'Update GenAI'
+description: Endpoint to Update GenAI
+api: 'PUT https://chat.api.toolzz.com.br/api/v1/widget{id}'
+authorization: none
+---
+
+<Expandable title="Payload">
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="hasAssistant" type="boolean">
+  Indicates whether the entity has an assistant. Can be true, false, or null/undefined.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the widget update response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="hasAssistant" type="boolean">
+  Indicates whether the entity has an assistant. Can be true, false, or null/undefined.
+</ResponseField>

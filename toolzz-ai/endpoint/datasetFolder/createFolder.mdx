@@ -1,0 +1,45 @@
+---
+title: 'Create KnowledgeBase Folder'
+description: Endpoint to create KnowledgeBase 
+api: 'POST https://chat.api.toolzz.com.br/api/v1/knowledge/folder'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="name" type="string" required>
+  Name of the folder.
+</ResponseField>
+<ResponseField name="knowledgebaseId" type="uuid" required>
+  Identifier of the associated knowledge base.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the KnowledgeBase creation response
+
+<RequestExample>
+
+```json Request
+{
+"name": "pasta",
+"knowledgebaseId": "<uuid>"
+}
+```
+</RequestExample>
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the folder.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the institution associated with the folder.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the folder.
+</ResponseField>
+<ResponseField name="isRoot" type="boolean" required>
+  Indicates whether the folder is a root folder.
+</ResponseField>
+
+
+
+
+

@@ -1,0 +1,82 @@
+---
+title: 'Get Bot'
+api: 'GET https://chat.api.toolzz.com.br/api/v1/bot/{id}'
+---
+
+## Response Description 
+Below you will see the description of the bot response
+
+<ResponseField name="id" type="string" required>
+  Unique ID of the Bot.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the Bot.
+</ResponseField>
+<ResponseField name="prompt" type="string" required>
+  Text or command used as input for the bot.
+</ResponseField>
+<ResponseField name="metaprompt" type="string">
+  Additional configurations related to language, formatting, and response preferences.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Short description or purpose of the bot.
+</ResponseField>
+<ResponseField name="folders" type="any[]" required>
+  List of folders and their relationships.
+</ResponseField>
+<ResponseField name="plugins" type="any[]" required>
+  Plugins associated with the bot, including configurations and code.
+</ResponseField>
+<ResponseField name="botGenAI" type="any[]" required>
+  Settings and configurations for the bot's generative AI capabilities.
+</ResponseField>
+<ResponseField name="assistantId" type="string">
+  Optional ID of the linked assistant.
+</ResponseField>
+<ResponseField name="IconFile" type="any">
+  Icon file linked to the bot.
+</ResponseField>
+<ResponseField name="tags" type="string[]">
+  Tags or labels associated with the bot.
+</ResponseField>
+<ResponseField name="unityId" type="string" required>
+  ID of the organizational unit associated with the bot.
+</ResponseField>
+<ResponseField name="institutionId" type="string" required>
+  ID of the institution responsible for the bot.
+</ResponseField>
+<ResponseField name="progressStatus" type="string">
+  Current status of the bot's progress (e.g., FINISHED).
+</ResponseField>
+<ResponseField name="safeMode" type="boolean">
+  Indicates if safe mode is enabled for the bot.
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Activation status of the bot.
+</ResponseField>
+<ResponseField name="botMonetization" type="any">
+  Monetization settings for the bot, including price and recurrence.
+</ResponseField>
+<ResponseField name="hasMonetization" type="boolean">
+  Indicates if monetization is enabled for the bot.
+</ResponseField>
+<ResponseField name="hasAnalytics" type="boolean">
+  Indicates if analytics features are enabled.
+</ResponseField>
+<ResponseField name="isAdvancedBot" type="boolean">
+  Specifies if the bot is categorized as an advanced bot.
+</ResponseField>
+<ResponseField name="hasTools" type="boolean">
+  Indicates if the bot has tools enabled.
+</ResponseField>
+<ResponseField name="hasPlugins" type="boolean">
+  Indicates if plugins are enabled for the bot.
+</ResponseField>
+<ResponseField name="favorites" type="any[]">
+  List of users who have marked the bot as a favorite.
+</ResponseField>
+<ResponseField name="botFallBack" type="any[]">
+  Fallback configurations for the bot.
+</ResponseField>
+
+

@@ -1,0 +1,54 @@
+---
+title: 'Send-Message'
+description: Endpoint to make send the user message to chat
+api: 'POST https://kratos.api.toolzz.com.br/api/v1/chat/send-message'
+---
+
+<RequestExample>
+
+```json Request
+{
+  "message": "<user-message>",
+  "conversationId": "<string>",
+  "botId": "<uuid>"
+}
+```
+</RequestExample>
+
+<Expandable title="Payload">
+<ResponseField name="message" type="string" required>
+  The message content provided in the payload.
+</ResponseField>
+<ResponseField name="conversationId" type="string" required>
+  Unique identifier for the conversation.
+</ResponseField>
+<ResponseField name="botId" type="string" required>
+  Unique identifier for the bot associated with the conversation.
+</ResponseField>
+</Expandable>
+
+
+## Response Description 
+Below you will see the description of the subscription response
+<ResponseField name="message" type="object" required>
+  The message object containing content and conversation details.
+  <Expandable title="properties">
+    <ResponseField name="content" type="string" required>
+      The content of the message.
+    </ResponseField>
+    <ResponseField name="conversationId" type="string" required>
+      Unique identifier for the conversation.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="404">
+  Request Failure
+</ResponseField>

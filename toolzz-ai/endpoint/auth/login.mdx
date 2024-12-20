@@ -1,0 +1,63 @@
+---
+title: 'Post Login'
+description: 'Endpoint to make Login in institution'
+api: 'POST https://chat.api.toolzz.com.br/api/v1/auth/login'
+---
+
+<RequestExample>
+
+```json Payload Example
+{
+    "email": "email@example.com",
+    "password": "<string>"
+}
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the get Login response
+
+<ResponseField name="user" type="object" required>
+  Details of the user.
+  <Expandable title="properties">
+    <ResponseField name="id" type="uuid" required>
+      Unique identifier for the user.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the user.
+    </ResponseField>
+    <ResponseField name="email" type="string" required>
+      Email address of the user.
+    </ResponseField>
+    <ResponseField name="institutionId" type="uuid">
+      UUID of the associated institution (optional).
+    </ResponseField>
+    <ResponseField name="institutionName" type="string">
+      Name of the associated institution (optional).
+    </ResponseField>
+    <ResponseField name="isActive" type="boolean" required>
+      Indicates whether the user's account is active.
+    </ResponseField>
+    <ResponseField name="manualPayment" type="boolean" required>
+      Indicates whether the user has enabled manual payment.
+    </ResponseField>
+    <ResponseField name="token" type="string" required>
+      Authentication token for the user.
+    </ResponseField>
+    <ResponseField name="verified" type="boolean" required>
+      Indicates whether the user's email is verified.
+    </ResponseField>
+    <ResponseField name="hasPassword" type="boolean" required>
+      Indicates whether the user has a password set.
+    </ResponseField>
+    <ResponseField name="superAdmin" type="boolean" required>
+      Indicates whether the user has super admin privileges.
+    </ResponseField>
+    <ResponseField name="members" type="array" required>
+      List of members associated with the user.
+    </ResponseField>
+    <ResponseField name="isMember" type="boolean" required>
+      Indicates whether the user is a member of an institution.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

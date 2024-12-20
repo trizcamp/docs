@@ -1,0 +1,31 @@
+---
+title: 'Create GenAI Model'
+description: Endpoint to create GenAI Model
+api: 'POST https://chat.api.toolzz.com.br/api/v1/genAI/genAIModel/'
+---
+
+<Expandable title="Payload">
+<ResponseField name="id" type="string">
+  Optional unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="genAIId" type="string" required>
+  Unique identifier for the generative AI instance.
+</ResponseField>
+</Expandable>
+
+
+## Response Description 
+Below you will see the description of the GenAI Model response
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="genAIId" type="string" required>
+  Unique identifier for the generative AI instance.
+</ResponseField>
+

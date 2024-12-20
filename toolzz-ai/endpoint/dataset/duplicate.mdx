@@ -1,0 +1,34 @@
+---
+title: 'Duplicate KnowledgeBase'
+description: Endpoint to duplicate a KnowledgeBase
+api: 'POST https://chat.api.toolzz.com.br/api/v1/knowledge/duplicate/{id}'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the KnowledgeBase duplicate response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the copied knowledge base.
+</ResponseField>
+<ResponseField name="title" type="string" required>
+  Title of the copied knowledge base.
+</ResponseField>
+<ResponseField name="description" type="string">
+  Description of the copied knowledge base.
+</ResponseField>
+<ResponseField name="documentCount" type="number" required>
+  Number of documents in the copied knowledge base.
+</ResponseField>
+<ResponseField name="wordCount" type="number" required>
+  Total word count of all documents in the copied knowledge base.
+</ResponseField>
+<ResponseField name="icon" type="string">
+  URL of the copied knowledge base icon.
+</ResponseField>
+<ResponseField name="status" type="number" required>
+  Status of the copied knowledge base (e.g., 1 for active).
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Indicates whether the copied knowledge base is activated.
+</ResponseField>

@@ -1,0 +1,34 @@
+---
+title: 'Get Account'
+description: 'Get Account from institution'
+api: 'GET https://chat.api.toolzz.com.br/api/v1/auth/myAccount/{id}'
+---
+## Response Description 
+Below you will see the description of the get account response
+
+<ResponseField name="userAccount" type="object" required>
+  Contains user account information.
+  <Expandable title="properties">
+    <ResponseField name="name" type="string" required>
+      First name of the user.
+    </ResponseField>
+    <ResponseField name="lastName" type="string" required>
+      Last name of the user.
+    </ResponseField>
+    <ResponseField name="email" type="string" required>
+      Email address of the user.
+    </ResponseField>
+    <ResponseField name="phone" type="string">
+      Phone number of the user (optional).
+    </ResponseField>
+    <ResponseField name="imgProfile" type="string">
+      URL of the user's profile image (optional).
+    </ResponseField>
+    <ResponseField name="hasPassword" type="boolean" required>
+      Indicates if the user has a password set.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+

@@ -1,0 +1,127 @@
+---
+title: 'Extract Content Web'
+description: Endpoint to extract content from pages
+api: 'POST https://api/v2/extractor/web-scraper'
+---
+<Expandable title="Payload">
+<ResponseField name="unityId" type="uuid" required>
+  Identifier of the unity associated with the data.
+</ResponseField>
+<ResponseField name="folderId" type="uuid" required>
+  Identifier of the folder where the data is stored.
+</ResponseField>
+<ResponseField name="datasetId" type="uuid" required>
+  Identifier of the dataset associated with the operation.
+</ResponseField>
+<ResponseField name="urls" type="array" required>
+  <Expandable title="URLs">
+    <ResponseField name="page1" type="string" required>
+      URL for the page: "https://www.toolzz.com.br/home#b_386227_1_45971"
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+</Expandable>
+
+<RequestExample>
+```json Payload Example
+{
+  "unityId": "<uuid>",
+  "folderId": "<uuid>",
+  "datasetId": "<uuid>",
+  "urls": ["https://www.toolzz.com.br/home#b_386227_1_45971"]
+}
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Extract video content response
+
+<ResponseField name="message" type="string" required>
+  Status message for the operation.
+</ResponseField>
+<ResponseField name="urls" type="object" required>
+  Object containing URLs for the uploaded content.
+  <Expandable title="properties">
+    <ResponseField name="page1" type="string" required>
+      URL of the first page.
+    </ResponseField>
+    <ResponseField name="page2" type="string" required>
+      URL of the second page.
+    </ResponseField>
+    <ResponseField name="page3" type="string" required>
+      URL of the third page.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="files" type="array" required>
+  List of files associated with the uploaded content.
+  <Expandable title="properties">
+    <ResponseField name="id" type="uuid" required>
+      Unique identifier for the file.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Date and time when the file was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date">
+      Date and time when the file was last updated.
+    </ResponseField>
+    <ResponseField name="institutionId" type="uuid" required>
+      UUID of the institution associated with the file.
+    </ResponseField>
+    <ResponseField name="fileName" type="string" required>
+      Name of the file.
+    </ResponseField>
+    <ResponseField name="internalStorageUrl" type="string" required>
+      Internal storage URL for the file.
+    </ResponseField>
+    <ResponseField name="url" type="string" required>
+      Public URL for the file.
+    </ResponseField>
+    <ResponseField name="size" type="number" required>
+      Size of the file in bytes.
+    </ResponseField>
+    <ResponseField name="extension" type="string" required>
+      File extension (e.g., txt).
+    </ResponseField>
+    <ResponseField name="maskName" type="string" required>
+      Masked name for the file.
+    </ResponseField>
+    <ResponseField name="knowLedgeBaseId" type="uuid" required>
+      UUID of the knowledge base associated with the file.
+    </ResponseField>
+    <ResponseField name="kbFolderId" type="uuid" required>
+      UUID of the knowledge base folder associated with the file.
+    </ResponseField>
+    <ResponseField name="integrationId" type="uuid">
+      UUID of the integration associated with the file (if any).
+    </ResponseField>
+    <ResponseField name="customData" type="array" required>
+      Custom data associated with the file.
+      <Expandable title="properties">
+        <ResponseField name="id" type="string" required>
+          Identifier from the custom data.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="folder" type="object" required>
+  Details of the folder associated with the uploaded content.
+  <Expandable title="properties">
+    <ResponseField name="id" type="uuid" required>
+      Unique identifier for the folder.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the folder.
+    </ResponseField>
+    <ResponseField name="knowLedgeBaseId" type="uuid" required>
+      UUID of the knowledge base associated with the folder.
+    </ResponseField>
+    <ResponseField name="isRoot" type="boolean" required>
+      Indicates whether the folder is a root folder.
+    </ResponseField>
+    <ResponseField name="institutionId" type="uuid" required>
+      UUID of the institution associated with the folder.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

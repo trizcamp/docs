@@ -1,0 +1,189 @@
+---
+title: 'Duplicate Bot'
+description: Endpoint to duplicate a Bot
+api: 'POST https://chat.api.toolzz.com.br/api/v1/bot/duplicate/'
+authorization: none
+---
+
+<RequestExample>
+
+```json Payload Example
+  {
+    "id": "<uuid>"  
+  }
+```
+</RequestExample>
+## Response Description 
+Below you will see the description of the function duplicate response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier of the bot.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the bot.
+</ResponseField>
+<ResponseField name="prompt" type="string" required>
+  Prompt used to initialize the bot's responses.
+</ResponseField>
+<ResponseField name="metaprompt" type="string">
+  Metaprompt providing guidelines for the bot's behavior and settings.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the bot's functionality.
+</ResponseField>
+<ResponseField name="botGenAI" type="array">
+  List of configurations for generative AI integration.
+  <Expandable title="BotGenAI properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the GenAI configuration.
+    </ResponseField>
+    <ResponseField name="botId" type="string" required>
+      Associated bot ID.
+    </ResponseField>
+    <ResponseField name="credentialId" type="string">
+      ID of the credential used for the GenAI.
+    </ResponseField>
+    <ResponseField name="genAIModelId" type="string">
+      ID of the GenAI model (if applicable).
+    </ResponseField>
+    <ResponseField name="genAIId" type="string">
+      ID of the GenAI configuration (if applicable).
+    </ResponseField>
+    <ResponseField name="genAIKey" type="string">
+      API key for the GenAI service.
+    </ResponseField>
+    <ResponseField name="genAIOrganization" type="string">
+      Organization associated with the GenAI.
+    </ResponseField>
+    <ResponseField name="assistantId" type="string">
+      ID of the assistant configuration.
+    </ResponseField>
+    <ResponseField name="isDefault" type="boolean" required>
+      Indicates if this configuration is the default.
+    </ResponseField>
+    <ResponseField name="messagesLimit" type="number" required>
+      Maximum number of messages allowed.
+    </ResponseField>
+    <ResponseField name="charactersLimit" type="number" required>
+      Maximum number of characters allowed.
+    </ResponseField>
+    <ResponseField name="temperature" type="number" required>
+      Temperature for text generation (controls randomness).
+    </ResponseField>
+    <ResponseField name="topP" type="number" required>
+      TopP setting for nucleus sampling.
+    </ResponseField>
+    <ResponseField name="frequencyPenalty" type="number" required>
+      Penalty for repeated phrases.
+    </ResponseField>
+    <ResponseField name="presencePenalty" type="number" required>
+      Penalty for lack of new topics in responses.
+    </ResponseField>
+    <ResponseField name="topK" type="number" required>
+      TopK setting for sampling.
+    </ResponseField>
+    <ResponseField name="messagesQuery" type="number" required>
+      Number of messages queried at once.
+    </ResponseField>
+    <ResponseField name="model" type="string" required>
+      Name of the GenAI model used.
+    </ResponseField>
+    <ResponseField name="tools" type="array">
+      List of tools available for the GenAI.
+      <Expandable title="Tool properties">
+        <ResponseField name="type" type="string" required>
+          Type of the tool.
+        </ResponseField>
+        <ResponseField name="description" type="string">
+          Description of the tool's functionality.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="credential" type="object">
+      Credential details used for GenAI.
+      <Expandable title="Credential properties">
+        <ResponseField name="id" type="string" required>
+          Unique identifier of the credential.
+        </ResponseField>
+        <ResponseField name="name" type="string" required>
+          Name of the credential.
+        </ResponseField>
+        <ResponseField name="userId" type="string" required>
+          User ID associated with the credential.
+        </ResponseField>
+        <ResponseField name="unityId" type="string" required>
+          Unity ID associated with the credential.
+        </ResponseField>
+        <ResponseField name="integrationId" type="string" required>
+          Integration ID for the credential.
+        </ResponseField>
+        <ResponseField name="secretId" type="string" required>
+          Secret ID for accessing the integration.
+        </ResponseField>
+        <ResponseField name="status" type="boolean" required>
+          Indicates if the credential is active.
+        </ResponseField>
+        <ResponseField name="virtualKey" type="string">
+          Virtual key for the credential.
+        </ResponseField>
+        <ResponseField name="createdAt" type="string" required>
+          Timestamp for when the credential was created.
+        </ResponseField>
+        <ResponseField name="updatedAt" type="string">
+          Timestamp for when the credential was last updated.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="assistantId" type="string">
+  Optional ID for the associated assistant.
+</ResponseField>
+<ResponseField name="tags" type="array">
+  List of tags associated with the bot.
+</ResponseField>
+<ResponseField name="unityId" type="string" required>
+  ID of the associated unity.
+</ResponseField>
+<ResponseField name="institutionId" type="string" required>
+  ID of the associated institution.
+</ResponseField>
+<ResponseField name="progressStatus" type="string" required>
+  Current progress status of the bot.
+</ResponseField>
+<ResponseField name="safeMode" type="boolean" required>
+  Indicates if the bot is operating in safe mode.
+</ResponseField>
+<ResponseField name="isActivated" type="boolean" required>
+  Indicates if the bot is currently activated.
+</ResponseField>
+<ResponseField name="botMonetization" type="object">
+  Details about the bot's monetization (empty if not applicable).
+</ResponseField>
+<ResponseField name="hasMonetization" type="boolean" required>
+  Indicates if the bot has monetization enabled.
+</ResponseField>
+<ResponseField name="hasAnalytics" type="boolean" required>
+  Indicates if the bot has analytics enabled.
+</ResponseField>
+<ResponseField name="isAdvancedBot" type="boolean" required>
+  Indicates if the bot is configured as an advanced bot.
+</ResponseField>
+<ResponseField name="hasTools" type="boolean" required>
+  Indicates if the bot has tools integrated.
+</ResponseField>
+<ResponseField name="hasPlugins" type="boolean" required>
+  Indicates if the bot has plugins integrated.
+</ResponseField>
+<ResponseField name="favorites" type="array">
+  List of favorite configurations for the bot (empty if none).
+</ResponseField>
+<ResponseField name="botFallBack" type="array">
+  List of fallback configurations for the bot (empty if none).
+</ResponseField>
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

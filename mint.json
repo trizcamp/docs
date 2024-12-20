@@ -1,91 +1,254 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "ToolzzAI",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/icon.png",
+    "light": "/logo/icon.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/icon.png",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#101419",
+    "light": "#FF007A",
+    "dark": "#101419",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#101419",
+      "to": "#FF007A"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Home",
+    "url": "https://admin.toolzz.ai"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Toolzz AI",
+      "url": "toolzz-ai"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
+      "name": "Documentation Toolzz",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://docs.toolzz.dev/ai-reference/introduction"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "API Reference",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "toolzz-ai/introduction"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "ChatService",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "auth",
+        {
+          "group": "Auth",
+          "pages": [
+            "toolzz-ai/endpoint/auth/create",
+            "toolzz-ai/endpoint/auth/get",
+            "toolzz-ai/endpoint/auth/update",
+            "toolzz-ai/endpoint/auth/updateUser",
+            "toolzz-ai/endpoint/auth/login",
+            "toolzz-ai/endpoint/auth/forgot-password",
+            "toolzz-ai/endpoint/auth/confirmAccount",
+            "toolzz-ai/endpoint/auth/reset-password"
+
+          ]
+        },
+        "institution",
+        {
+          "group": "Institution",
+          "pages": [
+            "toolzz-ai/endpoint/institution/get",
+            "toolzz-ai/endpoint/institution/update",
+            "toolzz-ai/endpoint/institution/create"
+          ]
+        },
+        "institutionPlan",
+        {
+          "group": "Institution Plan",
+          "pages": [
+            "toolzz-ai/endpoint/institutionPlan/get",
+            "toolzz-ai/endpoint/institutionPlan/update",
+            "toolzz-ai/endpoint/institutionPlan/create"
+          ]
+        },
+        "bot",
+        {
+          "group": "Bot",
+          "pages": [
+            "toolzz-ai/endpoint/bots/get",
+            "toolzz-ai/endpoint/bots/getByUnity",
+            "toolzz-ai/endpoint/bots/create",
+            "toolzz-ai/endpoint/bots/update",
+            "toolzz-ai/endpoint/bots/duplicate",
+            "toolzz-ai/endpoint/bots/delete"
+          ]
+        },
+        "widget",
+        {
+          "group": "Widget",
+          "pages": [
+            "toolzz-ai/endpoint/widget/getByUnity",
+            "toolzz-ai/endpoint/widget/update",
+            "toolzz-ai/endpoint/widget/delete",
+            "toolzz-ai/endpoint/widget/duplicate",
+            "toolzz-ai/endpoint/widget/create"
+          ]
+        },
+        "GenAI",
+        {
+          "group": "GenAI",
+          "pages": [
+            "toolzz-ai/endpoint/genAI/create",
+            "toolzz-ai/endpoint/genAI/get",
+            "toolzz-ai/endpoint/genAI/update",
+            "toolzz-ai/endpoint/genAI/delete",
+            "genAIModel",
+            {
+              "group": "GenAI Model",
+              "pages": [
+                "toolzz-ai/endpoint/genAIModel/create",
+                "toolzz-ai/endpoint/genAIModel/get",
+                "toolzz-ai/endpoint/genAIModel/update",
+                "toolzz-ai/endpoint/genAIModel/delete"
+              ]
+            }
+          ]
+        },
+        "fallback",
+        {
+          "group": "Fallback",
+          "pages": [
+            "toolzz-ai/endpoint/fallback/create",
+            "toolzz-ai/endpoint/fallback/get",
+            "toolzz-ai/endpoint/fallback/update",
+            "toolzz-ai/endpoint/fallback/delete"
+          ]
+        },
+        "unity",
+        {
+          "group": "Unity",
+          "pages": [
+            "toolzz-ai/endpoint/unity/create",
+            "toolzz-ai/endpoint/unity/get",
+            "toolzz-ai/endpoint/unity/getAll",
+            "toolzz-ai/endpoint/unity/update",
+            "toolzz-ai/endpoint/unity/delete"
+          ]
+        },
+        "member",
+        {
+          "group": "Member",
+          "pages": [
+            "toolzz-ai/endpoint/member/create",
+            "toolzz-ai/endpoint/member/update",
+            "toolzz-ai/endpoint/member/get",
+            "toolzz-ai/endpoint/member/delete"
+            
+          ]
+        },
+        "function",
+        {
+          "group": "Function",
+          "pages": [
+            "toolzz-ai/endpoint/function/create",
+            "toolzz-ai/endpoint/function/get",
+            "toolzz-ai/endpoint/function/getById",
+            "toolzz-ai/endpoint/function/duplicate",
+            "toolzz-ai/endpoint/function/delete"
+
+          ]
+        },
+        "credential",
+        {
+          "group": "Credential",
+          "pages": [
+            "toolzz-ai/endpoint/credential/create",
+            "toolzz-ai/endpoint/credential/get",
+            "toolzz-ai/endpoint/credential/getType",
+            "toolzz-ai/endpoint/credential/update",
+            "toolzz-ai/endpoint/credential/delete"
+
+          ]
+        },
+        "KnowledgeBase",
+        {
+          "group": "KnowledgeBase",
+          "pages": [
+            "toolzz-ai/endpoint/dataset/create",
+            "toolzz-ai/endpoint/dataset/get",
+            "toolzz-ai/endpoint/dataset/duplicate",
+            "toolzz-ai/endpoint/dataset/update",
+            "toolzz-ai/endpoint/dataset/delete",
+            "datasetFolder",
+            {
+              "group": "KnowledgeBaseFolder",
+              "pages": [
+                "toolzz-ai/endpoint/datasetFolder/createFolder",
+                "toolzz-ai/endpoint/datasetFolder/getFolder",
+                "toolzz-ai/endpoint/datasetFolder/updateFolder",
+                "toolzz-ai/endpoint/datasetFolder/deleteFolder"
+              ]
+            }
+
+          ]
+        },
+        "subscription",
+        {
+          "group": "Subscription",
+          "pages": [
+            "toolzz-ai/endpoint/subscription/create",
+            "toolzz-ai/endpoint/subscription/createItem",
+            "toolzz-ai/endpoint/subscription/createSession",
+            "toolzz-ai/endpoint/subscription/update"
+          ]
+        },
+        "audio",
+        {
+          "group": "Audio",
+          "pages": [
+            "toolzz-ai/endpoint/audio/transcription"
+          ]
+        }
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Kratos",
       "pages": [
-        "api-reference/introduction"
+        "send-message",
+        {
+          "group": "Chat",
+          "pages": [
+            "toolzz-ai/endpoint/send-message/create"
+          ]
+        }
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Extractor",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "video",
+        {
+          "group": "Video Extractor",
+          "pages": [
+            "toolzz-ai/endpoint/extractor/video"
+          ]
+        },
+        "pages",
+        {
+          "group": "WebScraper",
+          "pages": [
+            "toolzz-ai/endpoint/extractor/pagesWeb",
+            "toolzz-ai/endpoint/extractor/web"
+
+          ]
+        }
       ]
     }
-  ],
-  "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+  ]
+  
   }
-}
+  

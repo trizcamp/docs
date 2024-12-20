@@ -1,0 +1,134 @@
+---
+title: 'Get Insitution'
+description: Endpoint to get a institution by id
+api: 'GET https://chat.api.toolzz.com.br/api/v1/institution/{id}'
+---
+
+### Response Description 
+The endpoint returns a response in JSON format with a confirmation response to the request.
+<ResponseField name="id" type="string">
+  Optional unique identifier.
+</ResponseField>
+<ResponseField name="institutionToolzzId" type="number" required>
+  ID of the institution in the Toolzz system.
+</ResponseField>
+<ResponseField name="aiDefaultModel" type="string" required>
+  Default AI model used for the institution.
+</ResponseField>
+<ResponseField name="chatStyle" type="string" required>
+  Style configuration for the chat interface.
+</ResponseField>
+<ResponseField name="primaryColorHex" type="string" required>
+  Primary color in HEX format.
+</ResponseField>
+<ResponseField name="secondaryColorHex" type="string" required>
+  Secondary color in HEX format.
+</ResponseField>
+<ResponseField name="lightModeLogoUrl" type="string" required>
+  URL for the logo in light mode.
+</ResponseField>
+<ResponseField name="lightModeAltLogoUrl" type="string">
+  URL for the alternative logo in light mode (optional).
+</ResponseField>
+<ResponseField name="darkModeLogoUrl" type="string" required>
+  URL for the logo in dark mode.
+</ResponseField>
+<ResponseField name="darkModeAltLogoUrl" type="string">
+  URL for the alternative logo in dark mode (optional).
+</ResponseField>
+<ResponseField name="faviconUrl" type="string" required>
+  URL for the favicon.
+</ResponseField>
+<ResponseField name="theme" type="string" required>
+  Theme configuration for the system.
+</ResponseField>
+<ResponseField name="subdomain" type="string" required>
+  Subdomain associated with the institution.
+</ResponseField>
+<ResponseField name="customDomain" type="string">
+  Custom domain associated with the institution (optional).
+</ResponseField>
+<ResponseField name="apiConversationUrl" type="string">
+  URL for the API conversation endpoint (optional).
+</ResponseField>
+<ResponseField name="userId" type="uuid" required>
+  Identifier of the associated user.
+</ResponseField>
+<ResponseField name="cnpj" type="string" required>
+  CNPJ (Cadastro Nacional da Pessoa Jurídica) of the institution.
+</ResponseField>
+<ResponseField name="isActive" type="boolean" required>
+  Indicates whether the institution is active.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the institution.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the institution.
+</ResponseField>
+<ResponseField name="safetyPlan" type="string" required>
+  Safety plan associated with the institution.
+</ResponseField>
+<ResponseField name="adminId" type="uuid" required>
+  ID of the administrator associated with the institution.
+</ResponseField>
+<ResponseField name="customerId" type="uuid" required>
+  ID of the customer associated with the institution.
+</ResponseField>
+<ResponseField name="subscriptionId" type="uuid" required>
+  ID of the subscription plan for the institution.
+</ResponseField>
+<ResponseField name="institutionPlan" type="InstitutionPlan" required>
+  <Expandable title="properties">
+  <ResponseField name="id" type="uuid" required>
+    Unique identifier.
+  </ResponseField>
+  <ResponseField name="institutionId" type="uuid" required>
+    ID of the associated institution.
+  </ResponseField>
+  <ResponseField name="unitiesLimit" type="number" required>
+    Limit for the number of organizational units.
+  </ResponseField>
+  <ResponseField name="botsLimit" type="number" required>
+    Maximum number of bots allowed.
+  </ResponseField>
+  <ResponseField name="widgetsLimit" type="number" required>
+    Limit for the number of widgets.
+  </ResponseField>
+  <ResponseField name="knowledgeBasesLimit" type="number" required>
+    Maximum number of knowledge bases allowed.
+  </ResponseField>
+  <ResponseField name="pluginsLimit" type="number" required>
+    Limit for the number of plugins.
+  </ResponseField>
+  <ResponseField name="vectorsLimit" type="number" required>
+    Maximum number of vectors allowed.
+  </ResponseField>
+  <ResponseField name="createdAt" type="Date" required>
+    Date and time when the record was created.
+  </ResponseField>
+  <ResponseField name="updatedAt" type="Date" required>
+    Date and time when the record was last updated.
+  </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+### Errors
+Exemples of security error
+  <Expandable title="error 🚦">
+    <ResponseField name="200" type="string">
+      Request Successful Response
+    </ResponseField>
+
+    <ResponseField name="500" type="string">
+      Request Failure
+    </ResponseField>
+  </Expandable>
+
+

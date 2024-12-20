@@ -1,0 +1,96 @@
+---
+title: 'Create Member'
+description: Endpoint to create Member
+api: 'POST https://chat.api.toolzz.com.br/api/v2/member'
+authorization: none
+---
+<RequestExample>
+```json Payload Example
+  {
+    "institutionId": "<uuid>",
+    "unityId": "<uuid>",
+    "userId": "<uuid>",
+    "name": "<string>",
+    "email": "<string>",
+    "access": "ADMIN | USER |MANAGER"
+  }
+```
+</RequestExample>
+
+
+### Response Description 
+Below you will see the description of the member creation response
+
+<ResponseField name="message" type="string" required>
+  Message content.
+</ResponseField>
+<ResponseField name="id" type="string">
+  Optional unique identifier.
+</ResponseField>
+<ResponseField name="institutionId" type="string">
+  Optional ID of the associated institution.
+</ResponseField>
+<ResponseField name="unityId" type="string">
+  Optional ID of the associated unity.
+</ResponseField>
+<ResponseField name="userId" type="string">
+  Optional ID of the associated user.
+</ResponseField>
+<ResponseField name="name" type="string">
+  Optional name of the individual.
+</ResponseField>
+<ResponseField name="email" type="string">
+  Optional email address of the individual.
+</ResponseField>
+<ResponseField name="access" type="string">
+  Optional access level.
+  <Expandable title="Allowed values">
+    <ResponseField name="MANAGER" type="string">
+      Access level for managing operations.
+    </ResponseField>
+    <ResponseField name="ADMIN" type="string">
+      Access level for administrative control.
+    </ResponseField>
+    <ResponseField name="USER" type="string">
+      Access level for general users.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="status" type="number">
+  Optional status indicator, allowed values are 0 (inactive) or 1 (active).
+</ResponseField>
+<ResponseField name="acceptedAt" type="string">
+  Optional timestamp indicating when the request was accepted.
+</ResponseField>
+<ResponseField name="createdAt" type="string">
+  Optional timestamp indicating when the record was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="string">
+  Optional timestamp indicating when the record was last updated.
+</ResponseField>
+<ResponseField name="user" type="object">
+  Optional nested user object.
+  <Expandable title="User properties">
+    <ResponseField name="id" type="string">
+      Unique identifier of the user.
+    </ResponseField>
+    <ResponseField name="name" type="string">
+      Name of the user.
+    </ResponseField>
+    <ResponseField name="email" type="string">
+      Email address of the user.
+    </ResponseField>
+    <ResponseField name="avatar" type="string">
+      URL of the user's avatar.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="avatar" type="string">
+  Optional URL of the avatar.
+</ResponseField>
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

@@ -1,0 +1,50 @@
+---
+title: 'Update User'
+description: Endpoint to Update User
+api: 'PUT https://chat.api.toolzz.com.br/api/v1/auth/update/{id}'
+authorization: none
+---
+<RequestExample>
+
+```json Payload Example
+{
+  "params": {
+    "id": "<uuid>"
+  },
+  "email": "<string>",
+  "name": "<string>",
+  "lastName": "<string>",
+  "verified": true,
+  "phone": "123456789",
+  "imgProfileId": "<uuid>",
+  "password": "<string>",
+  "institutionId": "<uuid>",
+  "rememberMeToken": "<string>"
+}
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Update Account response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the user.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  First name of the user.
+</ResponseField>
+<ResponseField name="lastName" type="string" required>
+  Last name of the user.
+</ResponseField>
+<ResponseField name="email" type="string" required>
+  Email address of the user.
+</ResponseField>
+<ResponseField name="phone" type="string">
+  Phone number of the user (optional).
+</ResponseField>
+<ResponseField name="imgProfileId" type="uuid">
+  Identifier for the user's profile image (optional).
+</ResponseField>
+<ResponseField name="imgProfile" type="string" required>
+  URL of the user's profile image.
+</ResponseField>

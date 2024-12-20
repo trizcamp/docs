@@ -1,0 +1,68 @@
+---
+title: 'Create Subscription Session'
+authMethod: "bearer"
+description: Endpoint to create Subscription Session
+api: 'POST https://chat.api.toolzz.com.br/api/v2/billing/subscription/items'
+---
+
+<RequestExample>
+
+```json Payload Example
+{
+  "userId": "usuario-id",
+  "institutionId": "instituicao-id",
+  "sessionToken": "token-de-sessao",
+  "type": "tipo-de-assinatura",
+  "quantity": 5
+}
+```
+</RequestExample>
+
+
+## Response Description 
+Below you will see the description of the Subscription Session response
+
+<ResponseField name="message" type="string" required>
+  Message related to the session.
+</ResponseField>
+<ResponseField name="customerId" type="uuid" required>
+  Identifier of the customer.
+</ResponseField>
+<ResponseField name="subscriptionId" type="uuid" required>
+  Identifier of the subscription.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the institution.
+</ResponseField>
+<ResponseField name="object" type="string" required>
+  Type of object returned.
+</ResponseField>
+<ResponseField name="clientSecret" type="string" required>
+  Secret key for client authentication.
+</ResponseField>
+<ResponseField name="components" type="object" required>
+  Components associated with the session.
+  <Expandable title="properties">
+    <ResponseField name="buy_button" type="boolean" required>
+      Indicates if the buy button is enabled.
+    </ResponseField>
+    <ResponseField name="pricing_table" type="boolean" required>
+      Indicates if the pricing table is displayed.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="created" type="number" required>
+  Timestamp when the session was created.
+</ResponseField>
+<ResponseField name="expires" type="number" required>
+  Timestamp when the session expires.
+</ResponseField>
+<ResponseField name="livemode" type="boolean" required>
+  Indicates if the session is in live mode.
+</ResponseField>
+<ResponseField name="url" type="string">
+  URL associated with the session (optional).
+</ResponseField>
+
+### Segurança 🔒
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.

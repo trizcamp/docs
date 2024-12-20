@@ -1,0 +1,24 @@
+---
+title: 'Get All GenAI Model'
+description: 'Endpoint to Get All GenAI Models'
+api: 'GET https://chat.api.toolzz.com.br/api/v1/genAI/genAIModel/all'
+---
+
+## Response Description 
+Below you will see the description of the GenAI Model response
+
+<ResponseField name="items" type="array" required>
+  List of generative AI configurations.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the configuration.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the generative AI model.
+    </ResponseField>
+    <ResponseField name="genAIId" type="string" required>
+      Unique identifier for the generative AI instance.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+

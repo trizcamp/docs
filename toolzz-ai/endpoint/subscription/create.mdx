@@ -1,0 +1,31 @@
+---
+title: 'Create Subscription'
+description: Endpoint to create Subscription
+api: 'POST https://chat.api.toolzz.com.br/api/v2/billing/subscription'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the subscription response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the record.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the associated institution.
+</ResponseField>
+<ResponseField name="message" type="string" required>
+  Message or description related to the record.
+</ResponseField>
+<ResponseField name="user" type="SubscriptionUser" required>
+  Details of the user associated with the subscription.
+</ResponseField>
+<ResponseField name="subscriptionId" type="uuid">
+  Identifier of the subscription (optional).
+</ResponseField>
+<ResponseField name="customerId" type="uuid">
+  Identifier of the customer (optional).
+</ResponseField>
+<ResponseField name="subscription" type="any">
+  Additional subscription details (optional).
+</ResponseField>

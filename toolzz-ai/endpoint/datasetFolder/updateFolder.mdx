@@ -1,0 +1,32 @@
+---
+title: 'Update KnowledgeBase Folder'
+description: Endpoint to update KnowledgeBase Folder
+api: 'PUT https://chat.api.toolzz.com.br/api/v1/knowledge/folder/{id}'
+---
+<RequestExample>
+
+```json Request
+{
+  "id": "<uuid>",
+  "institutionId": "<uuid>",
+  "name": "<string>",
+  "isRoot": false
+}
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the KnowledgeBase response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the folder.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the associated institution.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the folder.
+</ResponseField>
+<ResponseField name="isRoot" type="boolean" required>
+  Indicates if the folder is a root folder.
+</ResponseField>

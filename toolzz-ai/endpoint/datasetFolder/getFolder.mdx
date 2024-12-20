@@ -1,0 +1,37 @@
+---
+title: 'Get KnowledgeBase Folder'
+description: Endpoint to get all folders in knowledge base folder
+api: 'GET https://chat.api.toolzz.com.br/api/v1/knowledge/folder/knowledge/{id}'
+---
+
+### Response Description 
+The endpoint returns a response in JSON format with a confirmation response to the request.
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier of the folder.
+</ResponseField>
+<ResponseField name="institutionId" type="uuid" required>
+  Identifier of the associated institution.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the folder.
+</ResponseField>
+<ResponseField name="knowLedgeBaseId" type="uuid" required>
+  Identifier of the associated knowledge base.
+</ResponseField>
+<ResponseField name="isRoot" type="boolean" required>
+  Indicates if the folder is a root folder.
+</ResponseField>
+
+### Code Response
+  <Expandable title="code 🚦">
+    <ResponseField name="200" type="string">
+      Request Successful Response
+    </ResponseField>
+
+    <ResponseField name="500" type="string">
+      Request Failure
+    </ResponseField>
+  </Expandable>
+
+

@@ -1,0 +1,48 @@
+---
+title: 'Get Unity'
+description: 'Get all Unities from Insitution'
+api: 'GET https://chat.api.toolzz.com.br/api/v1/unity/'
+---
+<Note>The result must contain an array listing all widgets</Note>
+
+## Response Description 
+Below you will see the description of the  response
+
+<ResponseField name="items" type="array" required>
+  List of unities and their details.
+  <Expandable title="items">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the unity.
+    </ResponseField>
+    <ResponseField name="institutionId" type="string" required>
+      ID of the associated institution.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the unity.
+    </ResponseField>
+    <ResponseField name="isActivated" type="boolean" required>
+      Activation status of the unity.
+    </ResponseField>
+    <ResponseField name="credentialProjectId" type="string" required>
+      Credential project ID linked to the unity.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<ResponseField name="unityCount" type="number" required>
+  Total number of unities.
+</ResponseField>
+<ResponseField name="activeCount" type="number" required>
+  Number of active unities.
+</ResponseField>
+<ResponseField name="unityLimit" type="number" required>
+  Maximum limit for the number of unities.
+</ResponseField>
+
+
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

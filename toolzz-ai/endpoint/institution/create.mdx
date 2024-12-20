@@ -1,0 +1,42 @@
+---
+title: 'Create Insitution'
+description: Endpoint to create institution
+api: 'POST https://chat.api.toolzz.com.br/api/v1/institution'
+authorization: none
+---
+
+### Response Description 
+Below you will see the description of the institution response
+
+<ResponseField name="id" type="uuid" required>
+  Unique identifier.
+</ResponseField>
+<ResponseField name="userId" type="uuid" required>
+  Identifier of the user associated with the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="cnpj" type="string" required>
+  CNPJ (Cadastro Nacional da Pessoa Jurídica) of the institution.
+</ResponseField>
+<ResponseField name="description" type="string">
+  Description providing additional details about the institution.
+</ResponseField>
+<ResponseField name="subdomain" type="string">
+  Custom subdomain associated with the institution.
+</ResponseField>
+<ResponseField name="customDomain" type="string">
+  Custom domain linked to the entity.
+</ResponseField>
+<ResponseField name="message" type="string">
+  Successful message
+</ResponseField>
+
+
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

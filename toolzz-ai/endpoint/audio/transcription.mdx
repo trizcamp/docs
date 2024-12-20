@@ -1,0 +1,48 @@
+---
+title: 'Transcription Audio'
+description: Endpoint to make Audio Transcription
+api: 'POST https://chat.api.toolzz.com.br/api/v1/audio/'
+authorization: none
+---
+<Warning>The `botId` and `Input` fields are required!</Warning>
+
+<Expandable title="Payload">
+<ResponseField name="input" type="string" required>
+  Input data provided in the payload.
+</ResponseField>
+<ResponseField name="voice" type="string">
+  Voice setting from the payload; defaults to 'onyx' if not provided.
+</ResponseField>
+<ResponseField name="botId" type="string" required>
+  Identifier for the bot associated with the payload.
+</ResponseField>
+</Expandable>
+
+<RequestExample>
+
+```json Payload Example
+  {
+    "input": "<string>",
+    "botId" : "<uuid>",
+    "voice": "<string>
+  }
+```
+</RequestExample>
+---
+
+<Card title="Use Case" icon="magnifying-glass">
+  The user can send an audio message to the bot, which will 
+  transcribe the audio and provide a response.
+</Card>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>
