@@ -1,0 +1,258 @@
+---
+title: 'Get a specific trace'
+description: Endpoint to create a new dataset on toolzz analytics
+api: 'GET /api/public/traces/{traceId}'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the create dataset response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="timestamp" type="Date" required>
+  Timestamp indicating the creation or event time.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="input" type="null">
+  Input data associated with the entity (optional).
+</ResponseField>
+<ResponseField name="output" type="null">
+  Output data associated with the entity (optional).
+</ResponseField>
+<ResponseField name="sessionId" type="string" required>
+  Identifier for the session associated with the entity.
+</ResponseField>
+<ResponseField name="release" type="string" required>
+  Release version of the entity.
+</ResponseField>
+<ResponseField name="version" type="string" required>
+  Version of the entity.
+</ResponseField>
+<ResponseField name="userId" type="string" required>
+  Identifier for the user associated with the entity.
+</ResponseField>
+<ResponseField name="metadata" type="null">
+  Metadata associated with the entity (optional).
+</ResponseField>
+<ResponseField name="tags" type="array" required>
+  List of tags associated with the entity.
+</ResponseField>
+<ResponseField name="public" type="boolean" required>
+  Indicates if the entity is public.
+</ResponseField>
+<ResponseField name="htmlPath" type="string">
+  Path to the HTML representation of the entity (optional).
+</ResponseField>
+<ResponseField name="latency" type="integer" required>
+  Latency of the process in milliseconds.
+</ResponseField>
+<ResponseField name="totalCost" type="integer" required>
+  Total cost associated with the process.
+</ResponseField>
+<ResponseField name="observations" type="array">
+  List of observations associated with the entity.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the observation.
+    </ResponseField>
+    <ResponseField name="traceId" type="string" required>
+      Trace identifier associated with the observation.
+    </ResponseField>
+    <ResponseField name="type" type="string" required>
+      Type of the observation.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the observation.
+    </ResponseField>
+    <ResponseField name="startTime" type="Date" required>
+      Start time of the observation.
+    </ResponseField>
+    <ResponseField name="endTime" type="Date">
+      End time of the observation (optional).
+    </ResponseField>
+    <ResponseField name="completionStartTime" type="Date">
+      Completion start time of the observation (optional).
+    </ResponseField>
+    <ResponseField name="model" type="string" required>
+      Model used for the observation.
+    </ResponseField>
+    <ResponseField name="modelParameters" type="object">
+      Parameters for the model used in the observation.
+      <Expandable title="properties">
+        <ResponseField name="property1" type="string" required>
+          First model parameter.
+        </ResponseField>
+        <ResponseField name="property2" type="string" required>
+          Second model parameter.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="input" type="object">
+      Input data for the observation (optional).
+    </ResponseField>
+    <ResponseField name="version" type="string" required>
+      Version of the observation.
+    </ResponseField>
+    <ResponseField name="metadata" type="object">
+      Metadata associated with the observation (optional).
+    </ResponseField>
+    <ResponseField name="output" type="object">
+      Output data from the observation (optional).
+    </ResponseField>
+    <ResponseField name="usage" type="object" required>
+      Usage statistics for the observation.
+      <Expandable title="properties">
+        <ResponseField name="input" type="integer" required>
+          Input usage count.
+        </ResponseField>
+        <ResponseField name="output" type="integer" required>
+          Output usage count.
+        </ResponseField>
+        <ResponseField name="total" type="integer" required>
+          Total usage count.
+        </ResponseField>
+        <ResponseField name="unit" type="string" required>
+          Unit of measurement (e.g., CHARACTERS).
+        </ResponseField>
+        <ResponseField name="inputCost" type="integer" required>
+          Cost for input usage.
+        </ResponseField>
+        <ResponseField name="outputCost" type="integer" required>
+          Cost for output usage.
+        </ResponseField>
+        <ResponseField name="totalCost" type="integer" required>
+          Total usage cost.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="level" type="string" required>
+      Debugging level of the observation.
+    </ResponseField>
+    <ResponseField name="statusMessage" type="string">
+      Status message for the observation (optional).
+    </ResponseField>
+    <ResponseField name="parentObservationId" type="string">
+      Parent observation ID (optional).
+    </ResponseField>
+    <ResponseField name="promptId" type="string">
+      Prompt ID associated with the observation (optional).
+    </ResponseField>
+    <ResponseField name="usageDetails" type="object">
+      Additional usage details.
+      <Expandable title="properties">
+        <ResponseField name="property1" type="integer" required>
+          First usage detail.
+        </ResponseField>
+        <ResponseField name="property2" type="integer" required>
+          Second usage detail.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="costDetails" type="object">
+      Cost breakdown details.
+      <Expandable title="properties">
+        <ResponseField name="property1" type="integer" required>
+          First cost detail.
+        </ResponseField>
+        <ResponseField name="property2" type="integer" required>
+          Second cost detail.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="promptName" type="string">
+      Name of the prompt used.
+    </ResponseField>
+    <ResponseField name="promptVersion" type="integer">
+      Version of the prompt used.
+    </ResponseField>
+    <ResponseField name="modelId" type="string">
+      Identifier for the model used.
+    </ResponseField>
+    <ResponseField name="inputPrice" type="integer">
+      Price for input usage.
+    </ResponseField>
+    <ResponseField name="outputPrice" type="integer">
+      Price for output usage.
+    </ResponseField>
+    <ResponseField name="totalPrice" type="integer">
+      Total price for the observation.
+    </ResponseField>
+    <ResponseField name="calculatedInputCost" type="integer">
+      Calculated cost for input usage.
+    </ResponseField>
+    <ResponseField name="calculatedOutputCost" type="integer">
+      Calculated cost for output usage.
+    </ResponseField>
+    <ResponseField name="calculatedTotalCost" type="integer">
+      Calculated total cost for the observation.
+    </ResponseField>
+    <ResponseField name="latency" type="integer" required>
+      Latency of the observation in milliseconds.
+    </ResponseField>
+    <ResponseField name="timeToFirstToken" type="integer">
+      Time to first token generation in milliseconds.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="scores" type="array">
+  List of scores associated with the entity.
+  <Expandable title="properties">
+    <ResponseField name="dataType" type="string" required>
+      Data type of the score (e.g., NUMERIC).
+    </ResponseField>
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the score.
+    </ResponseField>
+    <ResponseField name="traceId" type="string" required>
+      Trace identifier associated with the score.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the score.
+    </ResponseField>
+    <ResponseField name="source" type="string" required>
+      Source of the score (e.g., ANNOTATION).
+    </ResponseField>
+    <ResponseField name="observationId" type="string" required>
+      Identifier for the related observation.
+    </ResponseField>
+    <ResponseField name="timestamp" type="Date" required>
+      Timestamp when the score was recorded.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Timestamp when the score was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date" required>
+      Timestamp when the score was last updated.
+    </ResponseField>
+    <ResponseField name="authorUserId" type="string">
+      Identifier of the user who authored the score.
+    </ResponseField>
+    <ResponseField name="comment" type="string">
+      Comment associated with the score.
+    </ResponseField>
+    <ResponseField name="configId" type="string">
+      Configuration ID associated with the score.
+    </ResponseField>
+    <ResponseField name="queueId" type="string">
+      Queue ID associated with the score.
+    </ResponseField>
+    <ResponseField name="value" type="integer" required>
+      Value of the score.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

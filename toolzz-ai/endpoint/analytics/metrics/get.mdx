@@ -1,0 +1,110 @@
+---
+title: 'Get daily metrics'
+description: Endpoint to get daily metrics on toolzz analytics
+api: 'GET /api/public/metrics/daily'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (nullable).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page (nullable).
+</ResponseField>
+<ResponseField name="traceName" type="string">
+  Optional filter by the name of the trace (nullable).
+</ResponseField>
+<ResponseField name="userId" type="string">
+  Optional filter by the userId associated with the trace (nullable).
+</ResponseField>
+<ResponseField name="tags" type="array">
+  Optional filter for metrics where traces include all of these tags.
+  <Expandable title="items">
+    <ResponseField name="tag" type="string" required>
+      A single tag.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="fromTimestamp" type="date-time">
+  Optional filter for traces and observations on or after a certain datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="toTimestamp" type="date-time">
+  Optional filter for traces and observations before a certain datetime (ISO 8601).
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the Get Project response
+
+<ResponseField name="data" type="array" required>
+  List of records grouped by date.
+  <Expandable title="properties">
+    <ResponseField name="date" type="date" required>
+      Date of the record.
+    </ResponseField>
+    <ResponseField name="countTraces" type="integer" required>
+      Total number of traces for the given date.
+    </ResponseField>
+    <ResponseField name="countObservations" type="integer" required>
+      Total number of observations for the given date.
+    </ResponseField>
+    <ResponseField name="totalCost" type="integer" required>
+      Total cost for the given date.
+    </ResponseField>
+    <ResponseField name="usage" type="array" required>
+      Detailed usage metrics for the given date.
+      <Expandable title="items">
+        <ResponseField name="model" type="string" required>
+          Model name associated with the usage.
+        </ResponseField>
+        <ResponseField name="inputUsage" type="integer" required>
+          Total input usage for the model.
+        </ResponseField>
+        <ResponseField name="outputUsage" type="integer" required>
+          Total output usage for the model.
+        </ResponseField>
+        <ResponseField name="totalUsage" type="integer" required>
+          Total usage for the model.
+        </ResponseField>
+        <ResponseField name="countTraces" type="integer" required>
+          Number of traces associated with the model.
+        </ResponseField>
+        <ResponseField name="countObservations" type="integer" required>
+          Number of observations associated with the model.
+        </ResponseField>
+        <ResponseField name="totalCost" type="integer" required>
+          Total cost associated with the model.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

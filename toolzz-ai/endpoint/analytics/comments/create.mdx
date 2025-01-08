@@ -1,0 +1,40 @@
+---
+title: 'Create a comment'
+description: Endpoint to Create a comment on toolzz analytics
+api: 'POST /api/public/comments'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="projectId" type="string" required>
+  ID of the associated project.
+</ResponseField>
+<ResponseField name="objectType" type="string" required>
+  Type of object the comment is associated with (e.g., TRACE, OBSERVATION).
+</ResponseField>
+<ResponseField name="objectId" type="string" required>
+  ID of the object the comment is associated with.
+</ResponseField>
+<ResponseField name="content" type="string" required>
+  The content of the comment.
+</ResponseField>
+<ResponseField name="authorUserId" type="string" required>
+  ID of the user who authored the comment.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the Create a comment response
+<ResponseField name="id" type="string" required>
+  Unique identifier.
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

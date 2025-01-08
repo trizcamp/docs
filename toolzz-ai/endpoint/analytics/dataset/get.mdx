@@ -1,0 +1,39 @@
+---
+title: 'Get Dataset By Name'
+description: Endpoint to Get a DatasetI By Name 
+api: 'GET https://api/public/v2/datasets/{datasetName}'
+authorization: none
+---
+
+<RequestExample>
+```json Request
+    {
+      "datasetName": <string>
+    }
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Get Dataset By Id response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the entity.
+</ResponseField>
+<ResponseField name="metadata" type="object">
+  Metadata associated with the entity (optional).
+</ResponseField>
+<ResponseField name="projectId" type="string" required>
+  Unique identifier for the project associated with the entity.
+</ResponseField>
+<ResponseField name="createdAt" type="Date" required>
+  Timestamp indicating when the entity was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="Date" required>
+  Timestamp indicating when the entity was last updated.
+</ResponseField>

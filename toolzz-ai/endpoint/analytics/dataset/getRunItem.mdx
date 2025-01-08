@@ -1,0 +1,79 @@
+---
+title: 'Get a Dataset Run and its Items'
+description: Endpoint to Get a DatasetI By Name on Toolzz Analytics
+api: 'GET https://api/public/v2/datasets/{datasetName}'
+authorization: none
+---
+
+<RequestExample>
+```json Request
+{
+  "datasetName": "string",
+  "runName": "string"
+}
+```
+
+<Expandable title="Payload">
+<ResponseField name="datasetName" type="string" required>
+  Name of the dataset.
+</ResponseField>
+<ResponseField name="runName" type="string" required>
+  Name of the run associated with the dataset.
+</ResponseField>
+</RequestExample>
+
+## Response Description 
+Below you will see the description of to Get a dataset run and its items response
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the entity.
+</ResponseField>
+<ResponseField name="metadata" type="object">
+  Metadata associated with the entity (optional).
+</ResponseField>
+<ResponseField name="datasetId" type="string" required>
+  Unique identifier for the associated dataset.
+</ResponseField>
+<ResponseField name="datasetName" type="string" required>
+  Name of the associated dataset.
+</ResponseField>
+<ResponseField name="createdAt" type="Date" required>
+  Timestamp indicating when the entity was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="Date" required>
+  Timestamp indicating when the entity was last updated.
+</ResponseField>
+<ResponseField name="datasetRunItems" type="array" required>
+  List of dataset run items associated with the entity.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the dataset run item.
+    </ResponseField>
+    <ResponseField name="datasetRunId" type="string" required>
+      Unique identifier for the dataset run associated with the item.
+    </ResponseField>
+    <ResponseField name="datasetRunName" type="string" required>
+      Name of the dataset run associated with the item.
+    </ResponseField>
+    <ResponseField name="datasetItemId" type="string" required>
+      Unique identifier for the dataset item.
+    </ResponseField>
+    <ResponseField name="traceId" type="string" required>
+      Unique identifier for the trace.
+    </ResponseField>
+    <ResponseField name="observationId" type="string" required>
+      Unique identifier for the observation.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Timestamp indicating when the dataset run item was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date" required>
+      Timestamp indicating when the dataset run item was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

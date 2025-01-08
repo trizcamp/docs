@@ -1,0 +1,113 @@
+---
+title: 'Create a score configuration'
+description: Endpoint to Create a score on toolzz analytics
+api: 'POST /api/public/scores'
+authorization: none
+---
+<Note>Score configs are used to define the structure of scores</Note>
+
+
+<RequestExample>
+
+```json Payload Example
+{
+  "name": "string",
+  "dataType": "NUMERIC",
+  "categories": [
+    {
+      "value": 0,
+      "label": "string"
+    }
+  ],
+  "minValue": 0,
+  "maxValue": 0,
+  "description": "string"
+}
+```
+</RequestExample>
+
+<Expandable title="Request">
+<ResponseField name="name" type="string" required>
+  Name of the item.
+</ResponseField>
+<ResponseField name="dataType" type="string" required>
+  Type of data (e.g., NUMERIC, BOOLEAN, CATEGORICAL).
+</ResponseField>
+<ResponseField name="categories" type="array" required>
+  List of categories for the data.
+  <Expandable title="properties">
+    <ResponseField name="value" type="integer" required>
+      Value of the category.
+    </ResponseField>
+    <ResponseField name="label" type="string" required>
+      Label of the category.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="minValue" type="integer" required>
+  Minimum value for the data.
+</ResponseField>
+<ResponseField name="maxValue" type="integer" required>
+  Maximum value for the data.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the item.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the create config response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier of the item.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the item.
+</ResponseField>
+<ResponseField name="createdAt" type="date-time" required>
+  Timestamp when the item was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="date-time" required>
+  Timestamp when the item was last updated.
+</ResponseField>
+<ResponseField name="projectId" type="string" required>
+  Identifier of the associated project.
+</ResponseField>
+<ResponseField name="dataType" type="string" required>
+  Type of data (e.g., NUMERIC, BOOLEAN, CATEGORICAL).
+</ResponseField>
+<ResponseField name="isArchived" type="boolean" required>
+  Indicates whether the item is archived.
+</ResponseField>
+<ResponseField name="minValue" type="integer" required>
+  Minimum value for the data.
+</ResponseField>
+<ResponseField name="maxValue" type="integer" required>
+  Maximum value for the data.
+</ResponseField>
+<ResponseField name="categories" type="array" required>
+  List of categories associated with the data.
+  <Expandable title="properties">
+    <ResponseField name="value" type="integer" required>
+      Value of the category.
+    </ResponseField>
+    <ResponseField name="label" type="string" required>
+      Label of the category.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the item.
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

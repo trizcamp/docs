@@ -1,0 +1,60 @@
+---
+title: 'Get a presigned upload URL'
+description: Endpoint to Get a presigned upload URL for a media record on toolzz analytics
+api: 'POST /api/public/media'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="traceId" type="string" required>
+  The trace ID associated with the media record.
+</ResponseField>
+<ResponseField name="observationId" type="string">
+  The observation ID associated with the media record. Null if directly associated with a trace.
+</ResponseField>
+<ResponseField name="contentType" type="enum" required>
+  The MIME type of the media record (e.g., image/png, application/json).
+</ResponseField>
+<ResponseField name="contentLength" type="integer" required>
+  The size of the media record in bytes.
+</ResponseField>
+<ResponseField name="sha256Hash" type="string" required>
+  The SHA-256 hash of the media record.
+</ResponseField>
+<ResponseField name="field" type="string" required>
+  The trace/observation field associated with the media record (e.g., input, output, metadata).
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the Get presigned upload URL response
+
+<ResponseField name="mediaId" type="string" required>
+  Unique identifier for the media.
+</ResponseField>
+<ResponseField name="contentType" type="string" required>
+  MIME type of the media (e.g., "image/png", "application/pdf").
+</ResponseField>
+<ResponseField name="contentLength" type="integer" required>
+  Size of the media in bytes.
+</ResponseField>
+<ResponseField name="uploadedAt" type="date-time" required>
+  Timestamp indicating when the media was uploaded.
+</ResponseField>
+<ResponseField name="url" type="string" required>
+  URL to access the media.
+</ResponseField>
+<ResponseField name="urlExpiry" type="string" required>
+  Expiry information for the media URL.
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

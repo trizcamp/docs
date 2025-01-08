@@ -49,10 +49,10 @@
             "toolzz-ai/endpoint/auth/create",
             "toolzz-ai/endpoint/auth/get",
             "toolzz-ai/endpoint/auth/update",
+            "toolzz-ai/endpoint/auth/confirmAccount",
             "toolzz-ai/endpoint/auth/updateUser",
             "toolzz-ai/endpoint/auth/login",
             "toolzz-ai/endpoint/auth/forgot-password",
-            "toolzz-ai/endpoint/auth/confirmAccount",
             "toolzz-ai/endpoint/auth/reset-password"
 
           ]
@@ -61,27 +61,29 @@
         {
           "group": "Institution",
           "pages": [
+            "toolzz-ai/endpoint/institution/create",
             "toolzz-ai/endpoint/institution/get",
-            "toolzz-ai/endpoint/institution/update",
-            "toolzz-ai/endpoint/institution/create"
+            "toolzz-ai/endpoint/institution/update"
+            
           ]
         },
         "institutionPlan",
         {
           "group": "Institution Plan",
           "pages": [
+            "toolzz-ai/endpoint/institutionPlan/create",
             "toolzz-ai/endpoint/institutionPlan/get",
-            "toolzz-ai/endpoint/institutionPlan/update",
-            "toolzz-ai/endpoint/institutionPlan/create"
+            "toolzz-ai/endpoint/institutionPlan/update"
+            
           ]
         },
         "bot",
         {
           "group": "Bot",
           "pages": [
+            "toolzz-ai/endpoint/bots/create",
             "toolzz-ai/endpoint/bots/get",
             "toolzz-ai/endpoint/bots/getByUnity",
-            "toolzz-ai/endpoint/bots/create",
             "toolzz-ai/endpoint/bots/update",
             "toolzz-ai/endpoint/bots/duplicate",
             "toolzz-ai/endpoint/bots/delete"
@@ -91,11 +93,12 @@
         {
           "group": "Widget",
           "pages": [
+            "toolzz-ai/endpoint/widget/create",
             "toolzz-ai/endpoint/widget/getByUnity",
             "toolzz-ai/endpoint/widget/update",
             "toolzz-ai/endpoint/widget/delete",
-            "toolzz-ai/endpoint/widget/duplicate",
-            "toolzz-ai/endpoint/widget/create"
+            "toolzz-ai/endpoint/widget/duplicate"
+            
           ]
         },
         "GenAI",
@@ -211,6 +214,140 @@
           "group": "Audio",
           "pages": [
             "toolzz-ai/endpoint/audio/transcription"
+          ]
+        }
+      ]
+    },
+    {
+      "group": "Toolzz Analytics",
+      "pages": [
+        "datasetsItems",
+        {
+          "group": "DatasetItems",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/create",
+            "toolzz-ai/endpoint/analytics/getAll",
+            "toolzz-ai/endpoint/analytics/get"
+            
+          ]
+        },
+        "datasetsRun",
+        {
+          "group": "DatasetRunItems",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/createRun"
+          ]
+        },
+        "datasets",
+        {
+          "group": "Datasets",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/dataset/create",
+            "toolzz-ai/endpoint/analytics/dataset/getAll",
+            "toolzz-ai/endpoint/analytics/dataset/get",
+            "toolzz-ai/endpoint/analytics/dataset/getRun",
+            "toolzz-ai/endpoint/analytics/dataset/getRunItem"
+          ]
+        },
+        "health",
+        {
+          "group": "Health",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/health"
+          ]
+        },
+        "Traces",
+        {
+          "group": "Traces",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/traces/getOne",
+            "toolzz-ai/endpoint/analytics/traces/getList"
+          ]
+        },
+        "Session",
+        {
+          "group": "Session",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/session/getAll"
+          ]
+        },
+        "Projects",
+        {
+          "group": "Projects",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/projects/get"
+          ]
+        },
+        "Prompt",
+        {
+          "group": "Prompt",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/prompt/get",
+            "toolzz-ai/endpoint/analytics/prompt/getList",
+            "toolzz-ai/endpoint/analytics/prompt/create"
+          ]
+        },
+        "Metrics",
+        {
+          "group": "Metrics",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/metrics/get"
+          ]
+        },
+        "Media",
+        {
+          "group": "Media",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/media/get",
+            "toolzz-ai/endpoint/analytics/media/patch",
+            "toolzz-ai/endpoint/analytics/media/getUrl"
+          ]
+        },
+        "Score",
+        {
+          "group": "Score",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/score/get",
+            "toolzz-ai/endpoint/analytics/score/getById",
+            "toolzz-ai/endpoint/analytics/score/create",
+            "toolzz-ai/endpoint/analytics/score/delete"
+          ]
+        },
+        "ScoreConfig",
+        {
+          "group": "ScoreConfig",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/scoreConfig/get",
+            "toolzz-ai/endpoint/analytics/scoreConfig/getById",
+            "toolzz-ai/endpoint/analytics/scoreConfig/create"
+          ]
+        },
+        "Models",
+        {
+          "group": "Models",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/models/get",
+            "toolzz-ai/endpoint/analytics/models/getById",
+            "toolzz-ai/endpoint/analytics/models/create",
+            "toolzz-ai/endpoint/analytics/models/delete"
+          ]
+        },
+        "Observations",
+        {
+          "group": "Observations",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/observations/get",
+            "toolzz-ai/endpoint/analytics/observations/getById"
+          ]
+        },
+        "Comments",
+        {
+          "group": "Comments",
+          "pages": [
+            "toolzz-ai/endpoint/analytics/comments/get",
+            "toolzz-ai/endpoint/analytics/comments/getById",
+            "toolzz-ai/endpoint/analytics/comments/create"
+
           ]
         }
       ]

@@ -1,0 +1,40 @@
+---
+title: 'Get Media Record'
+description: Endpoint to get media record on toolzz analytics
+api: 'GET /api/public/media/{mediaId}'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the Get Media Record response
+
+<ResponseField name="mediaId" type="string" required>
+  Unique identifier for the media.
+</ResponseField>
+<ResponseField name="contentType" type="string" required>
+  MIME type of the media (e.g., "image/png", "application/pdf").
+</ResponseField>
+<ResponseField name="contentLength" type="integer" required>
+  Size of the media in bytes.
+</ResponseField>
+<ResponseField name="uploadedAt" type="date-time" required>
+  Timestamp indicating when the media was uploaded.
+</ResponseField>
+<ResponseField name="url" type="string" required>
+  URL to access the media.
+</ResponseField>
+<ResponseField name="urlExpiry" type="string" required>
+  Expiry information for the media URL.
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

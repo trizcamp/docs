@@ -1,0 +1,142 @@
+---
+title: 'Get list of traces'
+description: Endpoint to create a new dataset on toolzz analytics
+api: 'GET https://analytics.toolzz.ai/api/trpc/traces.all'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (optional).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page (optional). If you encounter API issues due to too large page sizes, try to reduce the limit.
+</ResponseField>
+<ResponseField name="userId" type="string">
+  Optional filter for a specific user ID.
+</ResponseField>
+<ResponseField name="name" type="string">
+  Optional filter for a specific name.
+</ResponseField>
+<ResponseField name="sessionId" type="string">
+  Optional filter for a specific session ID.
+</ResponseField>
+<ResponseField name="fromTimestamp" type="date-time">
+  Optional filter to include traces with a timestamp on or after a certain datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="toTimestamp" type="date-time">
+  Optional filter to include traces with a timestamp before a certain datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="orderBy" type="string">
+  Format of the string [field].[asc/desc]. Fields: id, timestamp, name, userId, release, version, etc. (optional).
+</ResponseField>
+<ResponseField name="tags" type="array">
+  Only traces that include all of these tags will be returned.
+</ResponseField>
+<ResponseField name="version" type="string">
+  Optional filter to include traces with a certain version.
+</ResponseField>
+<ResponseField name="release" type="string">
+  Optional filter to include traces with a certain release.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the create dataset response
+
+<ResponseField name="data" type="array" required>
+  List of trace records.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the trace record.
+    </ResponseField>
+    <ResponseField name="timestamp" type="Date" required>
+      Timestamp indicating when the trace was recorded.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the trace record.
+    </ResponseField>
+    <ResponseField name="input" type="null">
+      Input data associated with the trace.
+    </ResponseField>
+    <ResponseField name="output" type="null">
+      Output data associated with the trace.
+    </ResponseField>
+    <ResponseField name="sessionId" type="string" required>
+      Identifier for the session associated with the trace.
+    </ResponseField>
+    <ResponseField name="release" type="string" required>
+      Release version associated with the trace.
+    </ResponseField>
+    <ResponseField name="version" type="string" required>
+      Version of the trace.
+    </ResponseField>
+    <ResponseField name="userId" type="string" required>
+      Identifier for the user associated with the trace.
+    </ResponseField>
+    <ResponseField name="metadata" type="null">
+      Metadata associated with the trace.
+    </ResponseField>
+    <ResponseField name="tags" type="array" required>
+      List of tags associated with the trace.
+    </ResponseField>
+    <ResponseField name="public" type="boolean" required>
+      Indicates if the trace is public.
+    </ResponseField>
+    <ResponseField name="htmlPath" type="string">
+      Path to the HTML representation of the trace (optional).
+    </ResponseField>
+    <ResponseField name="latency" type="integer" required>
+      Latency of the trace process in milliseconds.
+    </ResponseField>
+    <ResponseField name="totalCost" type="integer" required>
+      Total cost associated with the trace.
+    </ResponseField>
+    <ResponseField name="observations" type="array" required>
+      List of observation IDs associated with the trace.
+      <Expandable title="items">
+        <ResponseField name="observationId" type="string" required>
+          Unique identifier for an observation.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="scores" type="array" required>
+      List of score IDs associated with the trace.
+      <Expandable title="items">
+        <ResponseField name="scoreId" type="string" required>
+          Unique identifier for a score.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

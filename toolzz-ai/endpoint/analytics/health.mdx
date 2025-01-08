@@ -1,0 +1,16 @@
+---
+title: 'Check health of API and database'
+description: Check health of API and database
+api: 'GET https://api/public/v2/datasets/{datasetName}'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the API health response
+
+<ResponseField name="version" type="string" required>
+  Version of the system or API.
+</ResponseField>
+<ResponseField name="status" type="string" required>
+  Current status of the system or API (e.g., "OK").
+</ResponseField>

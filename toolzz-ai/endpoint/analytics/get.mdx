@@ -1,0 +1,95 @@
+---
+title: 'GET DatasetItem By Id'
+description: Endpoint to Get a DatasetItem By Id 
+api: 'GET https://analytics.toolzz.ai/api/trpc/datasets.byId,datasets.runsByDatasetId'
+authorization: none
+---
+
+
+<RequestExample>
+
+```json Request
+    {
+      "id" :<string>
+    }
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Get Dataset By Id response
+
+<ResponseField name="result" type="array" required>
+  List of results.
+  <Expandable title="properties">
+    <ResponseField name="data" type="object" required>
+      Data details for the result.
+      <Expandable title="properties">
+        <ResponseField name="json" type="object" required>
+          JSON object containing the main details.
+          <Expandable title="properties">
+            <ResponseField name="id" type="string" required>
+              Unique identifier for the dataset.
+            </ResponseField>
+            <ResponseField name="projectId" type="string" required>
+              Unique identifier for the project associated with the dataset.
+            </ResponseField>
+            <ResponseField name="name" type="string" required>
+              Name of the dataset.
+            </ResponseField>
+            <ResponseField name="description" type="string">
+              Description of the dataset (optional).
+            </ResponseField>
+            <ResponseField name="metadata" type="object">
+              Metadata associated with the dataset (optional).
+            </ResponseField>
+            <ResponseField name="createdAt" type="Date" required>
+              Timestamp indicating when the dataset was created.
+            </ResponseField>
+            <ResponseField name="updatedAt" type="Date" required>
+              Timestamp indicating when the dataset was last updated.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+        <ResponseField name="meta" type="object" required>
+          Metadata details for the result.
+          <Expandable title="properties">
+            <ResponseField name="values" type="object" required>
+              List of metadata values.
+              <Expandable title="properties">
+                <ResponseField name="createdAt" type="array" required>
+                  List of date values for creation.
+                  <Expandable title="properties">
+                    <ResponseField name="value" type="string" required>
+                      Value representing the createdAt field type (e.g., "Date").
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+                <ResponseField name="updatedAt" type="array" required>
+                  List of date values for update.
+                  <Expandable title="properties">
+                    <ResponseField name="value" type="string" required>
+                      Value representing the updatedAt field type (e.g., "Date").
+                    </ResponseField>
+                  </Expandable>
+                </ResponseField>
+              </Expandable>
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="totalRuns" type="integer" required>
+  Total number of runs (optional, defaults to 0 if absent).
+</ResponseField>
+<ResponseField name="runs" type="array" required>
+  List of runs (empty if no runs are available).
+</ResponseField>
+
+
+
+## Segurança
+Para acessar este endpoint, é necessário enviar um **token de acesso** válido através do cabeçalho de autorização (Authorization) da requisição. Além disso, a API é protegida por outras medidas de segurança para proteger os dados dos usuários.
+
+

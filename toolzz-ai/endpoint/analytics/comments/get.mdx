@@ -1,0 +1,85 @@
+---
+title: 'Get all comments'
+description: Endpoint toGet all comments on toolzz analytics
+api: 'GET /api/public/comments/{commentId}'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer | null">
+  Page number, starts at 1. Nullable if no pagination is required.
+</ResponseField>
+<ResponseField name="limit" type="integer | null">
+  Limit of items per page. Reduce size if API issues occur. Nullable if no limit is specified.
+</ResponseField>
+<ResponseField name="objectType" type="string | null">
+  Filter comments by object type (e.g., trace, observation, session, prompt). Nullable if no filtering by object type is needed.
+</ResponseField>
+<ResponseField name="objectId" type="string | null">
+  Filter comments by object ID. Required if objectType is provided; nullable otherwise.
+</ResponseField>
+<ResponseField name="authorUserId" type="string | null">
+  Filter comments by the author user ID. Nullable if no filtering by author is needed.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the get a list score response
+
+<ResponseField name="data" type="array">
+  Array of comment objects.
+  <Expandable title="Comment Object">
+    <ResponseField name="id" type="string" required>
+      Unique identifier of the comment.
+    </ResponseField>
+    <ResponseField name="projectId" type="string" required>
+      ID of the associated project.
+    </ResponseField>
+    <ResponseField name="createdAt" type="date-time" required>
+      Timestamp of when the comment was created (ISO 8601 format).
+    </ResponseField>
+    <ResponseField name="updatedAt" type="date-time" required>
+      Timestamp of when the comment was last updated (ISO 8601 format).
+    </ResponseField>
+    <ResponseField name="objectType" type="string" required>
+      Type of object the comment is associated with (e.g., TRACE, OBSERVATION).
+    </ResponseField>
+    <ResponseField name="objectId" type="string" required>
+      ID of the object the comment is associated with.
+    </ResponseField>
+    <ResponseField name="content" type="string" required>
+      The content of the comment.
+    </ResponseField>
+    <ResponseField name="authorUserId" type="string" required>
+      ID of the user who authored the comment.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object">
+  Metadata for pagination.
+  <Expandable title="Meta Object">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

@@ -1,0 +1,150 @@
+---
+title: 'Get a list of scores'
+description: Endpoint to Get a list of scores on toolzz analytics
+api: 'GET /api/public/scores'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (nullable).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page. Reduce size if API issues occur (nullable).
+</ResponseField>
+<ResponseField name="userId" type="string">
+  Retrieve only scores with this userId associated to the trace (nullable).
+</ResponseField>
+<ResponseField name="name" type="string">
+  Retrieve only scores with this name (nullable).
+</ResponseField>
+<ResponseField name="fromTimestamp" type="date-time">
+  Filter scores created on or after a certain datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="toTimestamp" type="date-time">
+  Filter scores created before a certain datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="source" type="enum" required>
+  Allowed values: ANNOTATION, API, EVAL. Retrieve only scores from a specific source.
+</ResponseField>
+<ResponseField name="operator" type="string">
+  Retrieve only scores with this operator (nullable).
+</ResponseField>
+<ResponseField name="value" type="double" required>
+  Retrieve only scores with this value.
+</ResponseField>
+<ResponseField name="scoreIds" type="string">
+  Comma-separated list of score IDs to limit results (nullable).
+</ResponseField>
+<ResponseField name="configId" type="string">
+  Retrieve only scores with a specific configId (nullable).
+</ResponseField>
+<ResponseField name="queueId" type="string">
+  Retrieve only scores with a specific annotation queueId (nullable).
+</ResponseField>
+<ResponseField name="dataType" type="enum" required>
+  Allowed values: NUMERIC, BOOLEAN, CATEGORICAL. Retrieve only scores with this dataType.
+</ResponseField>
+<ResponseField name="traceTags" type="array">
+  Only scores linked to traces with all these tags will be returned.
+  <Expandable title="items">
+    <ResponseField name="tag" type="string" required>
+      A single trace tag.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the get a list score response
+
+<ResponseField name="data" type="array" required>
+  List of scores.
+  <Expandable title="properties">
+    <ResponseField name="dataType" type="string" required>
+      Type of data (e.g., NUMERIC, BOOLEAN, CATEGORICAL).
+    </ResponseField>
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the score.
+    </ResponseField>
+    <ResponseField name="traceId" type="string" required>
+      Trace ID associated with the score.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the score.
+    </ResponseField>
+    <ResponseField name="source" type="string" required>
+      Source of the score (e.g., ANNOTATION, API, EVAL).
+    </ResponseField>
+    <ResponseField name="observationId" type="string" required>
+      Observation ID associated with the score.
+    </ResponseField>
+    <ResponseField name="timestamp" type="date-time" required>
+      Timestamp of the score.
+    </ResponseField>
+    <ResponseField name="createdAt" type="date-time" required>
+      Creation timestamp of the score.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="date-time" required>
+      Last update timestamp of the score.
+    </ResponseField>
+    <ResponseField name="authorUserId" type="string" required>
+      User ID of the author who created the score.
+    </ResponseField>
+    <ResponseField name="comment" type="string" required>
+      Comment associated with the score.
+    </ResponseField>
+    <ResponseField name="configId" type="string" required>
+      Config ID associated with the score.
+    </ResponseField>
+    <ResponseField name="queueId" type="string" required>
+      Queue ID associated with the score.
+    </ResponseField>
+    <ResponseField name="value" type="integer" required>
+      Value of the score.
+    </ResponseField>
+    <ResponseField name="trace" type="object" required>
+      Trace details associated with the score.
+      <Expandable title="properties">
+        <ResponseField name="userId" type="string" required>
+          User ID associated with the trace.
+        </ResponseField>
+        <ResponseField name="tags" type="array" required>
+          Tags associated with the trace.
+          <Expandable title="items">
+            <ResponseField name="tag" type="string" required>
+              A single tag.
+            </ResponseField>
+          </Expandable>
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

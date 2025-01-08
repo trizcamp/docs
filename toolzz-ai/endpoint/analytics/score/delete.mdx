@@ -1,0 +1,33 @@
+---
+title: 'Delete a score'
+description: Endpoint to Delete a score on toolzz analytics
+api: 'DELETE /api/public/scores/{scoreId}'
+authorization: none
+---
+
+<RequestExample>
+
+```json Payload Example
+  {
+    "scoreId": <string>
+  }
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the get a list score response
+
+<ResponseField name="message" type="string" required>
+  Successful message
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

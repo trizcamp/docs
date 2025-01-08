@@ -1,0 +1,92 @@
+---
+title: 'Get all score configs'
+description: Endpoint to Get all score configs on toolzz analytics
+api: 'GET /api/public/score-configs'
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (nullable).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page. Reduce size if API issues occur (nullable).
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the get a list score response
+
+<ResponseField name="data" type="array" required>
+  List of items.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier of the item.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the item.
+    </ResponseField>
+    <ResponseField name="createdAt" type="date-time" required>
+      Timestamp when the item was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="date-time" required>
+      Timestamp when the item was last updated.
+    </ResponseField>
+    <ResponseField name="projectId" type="string" required>
+      Identifier of the associated project.
+    </ResponseField>
+    <ResponseField name="dataType" type="string" required>
+      Type of data (e.g., NUMERIC, BOOLEAN, CATEGORICAL).
+    </ResponseField>
+    <ResponseField name="isArchived" type="boolean" required>
+      Indicates if the item is archived.
+    </ResponseField>
+    <ResponseField name="minValue" type="integer" required>
+      Minimum value for the data.
+    </ResponseField>
+    <ResponseField name="maxValue" type="integer" required>
+      Maximum value for the data.
+    </ResponseField>
+    <ResponseField name="categories" type="array" required>
+      List of categories for the data.
+      <Expandable title="properties">
+        <ResponseField name="value" type="integer" required>
+          Value of the category.
+        </ResponseField>
+        <ResponseField name="label" type="string" required>
+          Label of the category.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="description" type="string" required>
+      Description of the item.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

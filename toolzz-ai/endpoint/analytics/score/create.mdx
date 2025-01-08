@@ -1,0 +1,49 @@
+---
+title: 'Create a score'
+description: Endpoint to Create a score on toolzz analytics
+api: 'POST /api/public/scores'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="id" type="string" required>
+  Unique identifier for the score.
+</ResponseField>
+<ResponseField name="traceId" type="string" required>
+  Trace ID associated with the score.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the score (e.g., "novelty").
+</ResponseField>
+<ResponseField name="value" type="integer" required>
+  Value of the score.
+</ResponseField>
+<ResponseField name="observationId" type="string" required>
+  Observation ID associated with the score.
+</ResponseField>
+<ResponseField name="comment" type="string" required>
+  Comment associated with the score.
+</ResponseField>
+<ResponseField name="dataType" type="string" required>
+  Type of data (e.g., NUMERIC, BOOLEAN, CATEGORICAL).
+</ResponseField>
+<ResponseField name="configId" type="string" required>
+  Config ID associated with the score.
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the get a list score response
+<ResponseField name="id" type="string" required>
+  Unique identifier.
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

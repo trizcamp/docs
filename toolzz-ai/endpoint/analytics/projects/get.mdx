@@ -1,0 +1,33 @@
+---
+title: 'Get Project associated with API key'
+description: Endpoint to get all session on toolzz analytics
+api: 'GET /api/public/sessions'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of the Get Project response
+
+<ResponseField name="data" type="array" required>
+  List of items.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the item.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the item.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

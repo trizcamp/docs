@@ -1,0 +1,62 @@
+---
+title: 'Get All Dataset '
+description: 'Endpoint to Get all dataset on Toolzz Analytics'
+api: 'GET https:/api/public/v2/datasets'
+---
+
+<Expandable title="Resquest">
+<ResponseField name="page" type="integer">
+  Page number (optional), starts at 1.
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page (optional).
+</ResponseField>
+</Expandable>
+
+
+## Response Description 
+Below you will see the description of the get all dataset response
+
+<ResponseField name="data" type="array" required>
+  List of dataset items.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the dataset item.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the dataset item.
+    </ResponseField>
+    <ResponseField name="description" type="string" required>
+      Description of the dataset item.
+    </ResponseField>
+    <ResponseField name="metadata" type="null">
+      Metadata associated with the dataset item (optional).
+    </ResponseField>
+    <ResponseField name="projectId" type="string" required>
+      Unique identifier for the project associated with the dataset item.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Timestamp indicating when the dataset item was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date" required>
+      Timestamp indicating when the dataset item was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>

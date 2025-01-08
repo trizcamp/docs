@@ -1,0 +1,53 @@
+---
+title: 'Get a model'
+description: Endpoint to Get a model on toolzz analytics
+api: 'GET /api/public/models/{id}'
+---
+
+## Response Description 
+Below you will see the description of the get a list score response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier of the item.
+</ResponseField>
+<ResponseField name="modelName" type="string" required>
+  Name of the model associated with the item.
+</ResponseField>
+<ResponseField name="matchPattern" type="string" required>
+  Match pattern used for the item.
+</ResponseField>
+<ResponseField name="startDate" type="date" required>
+  Start date for the item's configuration.
+</ResponseField>
+<ResponseField name="unit" type="string" required>
+  Unit type, e.g., CHARACTERS.
+</ResponseField>
+<ResponseField name="inputPrice" type="integer" required>
+  Price for input usage.
+</ResponseField>
+<ResponseField name="outputPrice" type="integer" required>
+  Price for output usage.
+</ResponseField>
+<ResponseField name="totalPrice" type="integer" required>
+  Total price for the item.
+</ResponseField>
+<ResponseField name="tokenizerId" type="string" required>
+  Identifier of the tokenizer.
+</ResponseField>
+<ResponseField name="tokenizerConfig" type="null">
+  Configuration of the tokenizer (nullable).
+</ResponseField>
+<ResponseField name="isLangfuseManaged" type="boolean" required>
+  Indicates if the item is managed by Langfuse.
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

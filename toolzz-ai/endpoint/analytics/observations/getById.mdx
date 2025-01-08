@@ -1,0 +1,161 @@
+---
+title: 'Get a observation'
+description: Endpoint to Get a observation on toolzz analytics
+api: 'GET /api/public/observations/{observationId}'
+---
+
+## Response Description 
+Below you will see the description of the Get a observation response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier of the observation.
+</ResponseField>
+<ResponseField name="traceId" type="string" required>
+  Identifier of the trace associated with the observation.
+</ResponseField>
+<ResponseField name="type" type="string" required>
+  Type of the observation.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the observation.
+</ResponseField>
+<ResponseField name="startTime" type="date-time" required>
+  Start time of the observation in ISO 8601 format.
+</ResponseField>
+<ResponseField name="endTime" type="date-time" required>
+  End time of the observation in ISO 8601 format.
+</ResponseField>
+<ResponseField name="completionStartTime" type="date-time">
+  Time when the completion process started in ISO 8601 format.
+</ResponseField>
+<ResponseField name="model" type="string" required>
+  Name of the model used in the observation.
+</ResponseField>
+<ResponseField name="modelParameters" type="object">
+  Model parameters associated with the observation.
+  <Expandable title="properties">
+    <ResponseField name="property1" type="string">
+      Example parameter 1.
+    </ResponseField>
+    <ResponseField name="property2" type="string">
+      Example parameter 2.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="input" type="null">
+  Input data for the observation (nullable).
+</ResponseField>
+<ResponseField name="version" type="string">
+  Version of the observation.
+</ResponseField>
+<ResponseField name="metadata" type="null">
+  Metadata associated with the observation (nullable).
+</ResponseField>
+<ResponseField name="output" type="null">
+  Output data from the observation (nullable).
+</ResponseField>
+<ResponseField name="usage" type="object" required>
+  Usage metrics for the observation.
+  <Expandable title="properties">
+    <ResponseField name="input" type="integer" required>
+      Input usage count.
+    </ResponseField>
+    <ResponseField name="output" type="integer" required>
+      Output usage count.
+    </ResponseField>
+    <ResponseField name="total" type="integer" required>
+      Total usage count.
+    </ResponseField>
+    <ResponseField name="unit" type="string" required>
+      Unit of measurement (e.g., CHARACTERS).
+    </ResponseField>
+    <ResponseField name="inputCost" type="integer" required>
+      Cost for input usage.
+    </ResponseField>
+    <ResponseField name="outputCost" type="integer" required>
+      Cost for output usage.
+    </ResponseField>
+    <ResponseField name="totalCost" type="integer" required>
+      Total cost of the usage.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="level" type="string" required>
+  Log level of the observation (e.g., DEBUG).
+</ResponseField>
+<ResponseField name="statusMessage" type="string">
+  Status message of the observation.
+</ResponseField>
+<ResponseField name="parentObservationId" type="string">
+  Parent observation ID, if applicable.
+</ResponseField>
+<ResponseField name="promptId" type="string">
+  Identifier of the prompt used in the observation.
+</ResponseField>
+<ResponseField name="usageDetails" type="object">
+  Detailed usage metrics for the observation.
+  <Expandable title="properties">
+    <ResponseField name="property1" type="integer">
+      Example detailed property 1.
+    </ResponseField>
+    <ResponseField name="property2" type="integer">
+      Example detailed property 2.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="costDetails" type="object">
+  Detailed cost metrics for the observation.
+  <Expandable title="properties">
+    <ResponseField name="property1" type="integer">
+      Example cost detail property 1.
+    </ResponseField>
+    <ResponseField name="property2" type="integer">
+      Example cost detail property 2.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="promptName" type="string">
+  Name of the prompt used in the observation.
+</ResponseField>
+<ResponseField name="promptVersion" type="integer">
+  Version of the prompt used in the observation.
+</ResponseField>
+<ResponseField name="modelId" type="string">
+  Identifier of the model used in the observation.
+</ResponseField>
+<ResponseField name="inputPrice" type="integer">
+  Price for input usage.
+</ResponseField>
+<ResponseField name="outputPrice" type="integer">
+  Price for output usage.
+</ResponseField>
+<ResponseField name="totalPrice" type="integer">
+  Total price for the observation.
+</ResponseField>
+<ResponseField name="calculatedInputCost" type="integer">
+  Calculated input cost.
+</ResponseField>
+<ResponseField name="calculatedOutputCost" type="integer">
+  Calculated output cost.
+</ResponseField>
+<ResponseField name="calculatedTotalCost" type="integer">
+  Calculated total cost for the observation.
+</ResponseField>
+<ResponseField name="latency" type="integer">
+  Latency of the observation in milliseconds.
+</ResponseField>
+<ResponseField name="timeToFirstToken" type="integer">
+  Time taken to generate the first token in milliseconds.
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

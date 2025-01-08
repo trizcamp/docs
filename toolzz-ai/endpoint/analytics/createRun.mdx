@@ -1,0 +1,92 @@
+---
+title: 'Create Dataset Run'
+description: Endpoint to create a dataset run
+api: 'POST https://analytics.toolzz.ai/api/trpc/datasets.createDataset'
+authorization: none
+---
+
+
+<RequestExample>
+
+```json Request Body
+{
+  "runName": "string",
+  "runDescription": "string",
+  "metadata": null,
+  "datasetItemId": "string",
+  "observationId": "string",
+  "traceId": "string"
+}
+```
+</RequestExample>
+
+<Expandable title="Request Description">
+<ResponseField name="runName" type="string" required>
+  Name of the run.
+</ResponseField>
+<ResponseField name="runDescription" type="string" required>
+  Description of the run.
+</ResponseField>
+<ResponseField name="metadata" type="object">
+  Metadata associated with the run (optional).
+</ResponseField>
+<ResponseField name="datasetItemId" type="string" required>
+  Unique identifier for the dataset item.
+</ResponseField>
+<ResponseField name="observationId" type="string" required>
+  Unique identifier for the observation.
+</ResponseField>
+<ResponseField name="traceId" type="string" required>
+  Unique identifier for the trace.
+</ResponseField>
+</Expandable>
+
+---
+
+## Response Description 
+Below you will see the description of the dataset item response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the dataset item.
+</ResponseField>
+<ResponseField name="status" type="enum" required>
+  Status of the dataset item. Allowed values: ACTIVE | ARCHIVED.
+</ResponseField>
+<ResponseField name="input" type="null">
+  Input data for the dataset item (optional).
+</ResponseField>
+<ResponseField name="expectedOutput" type="null">
+  Expected output data for the dataset item (optional).
+</ResponseField>
+<ResponseField name="metadata" type="null">
+  Metadata associated with the dataset item (optional).
+</ResponseField>
+<ResponseField name="sourceTraceId" type="string">
+  Trace ID of the data source (optional).
+</ResponseField>
+<ResponseField name="sourceObservationId" type="string">
+  Observation ID of the data source (optional).
+</ResponseField>
+<ResponseField name="datasetId" type="string" required>
+  Unique identifier of the associated dataset.
+</ResponseField>
+<ResponseField name="datasetName" type="string" required>
+  Name of the associated dataset.
+</ResponseField>
+<ResponseField name="createdAt" type="Date" required>
+  Timestamp indicating when the dataset item was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="Date" required>
+  Timestamp indicating when the dataset item was last updated.
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

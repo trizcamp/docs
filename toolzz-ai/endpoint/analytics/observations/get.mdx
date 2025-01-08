@@ -1,0 +1,215 @@
+---
+title: 'Get a list of observations'
+description: Endpoint to Get a list of observations on toolzz analytics
+api: 'GET /api/public/observations'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (nullable).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page. Reduce the size if API issues occur (nullable).
+</ResponseField>
+<ResponseField name="name" type="string">
+  Optional filter for a specific name (nullable).
+</ResponseField>
+<ResponseField name="userId" type="string">
+  Optional filter for a specific user ID (nullable).
+</ResponseField>
+<ResponseField name="type" type="string">
+  Optional filter for a specific type (nullable).
+</ResponseField>
+<ResponseField name="traceId" type="string">
+  Optional filter for a specific trace ID (nullable).
+</ResponseField>
+<ResponseField name="parentObservationId" type="string">
+  Optional filter for a specific parent observation ID (nullable).
+</ResponseField>
+<ResponseField name="fromStartTime" type="date-time" required>
+  Retrieve only observations with a `start_time` on or after this datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="toStartTime" type="date-time" required>
+  Retrieve only observations with a `start_time` before this datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="version" type="string">
+  Optional filter to include only observations with a certain version (nullable).
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the Get a list of observations response
+
+<ResponseField name="data" type="array" required>
+  List of observation data.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier of the observation.
+    </ResponseField>
+    <ResponseField name="traceId" type="string" required>
+      Identifier of the trace associated with the observation.
+    </ResponseField>
+    <ResponseField name="type" type="string" required>
+      Type of the observation.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the observation.
+    </ResponseField>
+    <ResponseField name="startTime" type="date-time" required>
+      Start time of the observation.
+    </ResponseField>
+    <ResponseField name="endTime" type="date-time" required>
+      End time of the observation.
+    </ResponseField>
+    <ResponseField name="completionStartTime" type="date-time">
+      Time when the completion started.
+    </ResponseField>
+    <ResponseField name="model" type="string" required>
+      Model used in the observation.
+    </ResponseField>
+    <ResponseField name="modelParameters" type="object" required>
+      Model parameters.
+      <Expandable title="properties">
+        <ResponseField name="property1" type="string">
+          Example parameter 1.
+        </ResponseField>
+        <ResponseField name="property2" type="string">
+          Example parameter 2.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="input" type="null">
+      Input data for the observation (nullable).
+    </ResponseField>
+    <ResponseField name="version" type="string">
+      Version of the observation.
+    </ResponseField>
+    <ResponseField name="metadata" type="null">
+      Metadata associated with the observation (nullable).
+    </ResponseField>
+    <ResponseField name="output" type="null">
+      Output data from the observation (nullable).
+    </ResponseField>
+    <ResponseField name="usage" type="object" required>
+      Usage metrics.
+      <Expandable title="properties">
+        <ResponseField name="input" type="integer" required>
+          Input usage count.
+        </ResponseField>
+        <ResponseField name="output" type="integer" required>
+          Output usage count.
+        </ResponseField>
+        <ResponseField name="total" type="integer" required>
+          Total usage count.
+        </ResponseField>
+        <ResponseField name="unit" type="string" required>
+          Unit of measurement (e.g., CHARACTERS).
+        </ResponseField>
+        <ResponseField name="inputCost" type="integer" required>
+          Cost for input usage.
+        </ResponseField>
+        <ResponseField name="outputCost" type="integer" required>
+          Cost for output usage.
+        </ResponseField>
+        <ResponseField name="totalCost" type="integer" required>
+          Total cost of the usage.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="level" type="string" required>
+      Log level of the observation (e.g., DEBUG).
+    </ResponseField>
+    <ResponseField name="statusMessage" type="string">
+      Status message of the observation.
+    </ResponseField>
+    <ResponseField name="parentObservationId" type="string">
+      Parent observation ID, if applicable.
+    </ResponseField>
+    <ResponseField name="promptId" type="string">
+      Prompt ID used in the observation.
+    </ResponseField>
+    <ResponseField name="usageDetails" type="object">
+      Detailed usage metrics.
+      <Expandable title="properties">
+        <ResponseField name="property1" type="integer">
+          Example detailed property 1.
+        </ResponseField>
+        <ResponseField name="property2" type="integer">
+          Example detailed property 2.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="costDetails" type="object">
+      Detailed cost metrics.
+      <Expandable title="properties">
+        <ResponseField name="property1" type="integer">
+          Example cost detail property 1.
+        </ResponseField>
+        <ResponseField name="property2" type="integer">
+          Example cost detail property 2.
+        </ResponseField>
+      </Expandable>
+    </ResponseField>
+    <ResponseField name="promptName" type="string">
+      Name of the prompt used.
+    </ResponseField>
+    <ResponseField name="promptVersion" type="integer">
+      Version of the prompt used.
+    </ResponseField>
+    <ResponseField name="modelId" type="string">
+      Identifier of the model used.
+    </ResponseField>
+    <ResponseField name="inputPrice" type="integer">
+      Price for input usage.
+    </ResponseField>
+    <ResponseField name="outputPrice" type="integer">
+      Price for output usage.
+    </ResponseField>
+    <ResponseField name="totalPrice" type="integer">
+      Total price for the observation.
+    </ResponseField>
+    <ResponseField name="calculatedInputCost" type="integer">
+      Calculated cost for input.
+    </ResponseField>
+    <ResponseField name="calculatedOutputCost" type="integer">
+      Calculated cost for output.
+    </ResponseField>
+    <ResponseField name="calculatedTotalCost" type="integer">
+      Calculated total cost.
+    </ResponseField>
+    <ResponseField name="latency" type="integer">
+      Latency of the observation.
+    </ResponseField>
+    <ResponseField name="timeToFirstToken" type="integer">
+      Time taken to generate the first token.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Metadata for pagination.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Limit of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

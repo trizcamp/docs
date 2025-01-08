@@ -1,0 +1,67 @@
+---
+title: 'Create Dataset'
+description: Endpoint to create a new dataset on toolzz analytics
+api: 'POST https://analytics.toolzz.ai/api/trpc/datasets.createDataset'
+authorization: none
+---
+
+<RequestExample>
+
+```json Request
+{
+  "name": "string",
+  "description": "string",
+  "metadata": null
+}
+```
+</RequestExample>
+
+<Expandable title="Payload">
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the entity.
+</ResponseField>
+<ResponseField name="metadata" type="object">
+  Metadata associated with the entity (optional).
+</ResponseField>
+</Expandable>
+
+---
+
+## Response Description 
+Below you will see the description of the create dataset response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier for the entity.
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the entity.
+</ResponseField>
+<ResponseField name="description" type="string" required>
+  Description of the entity.
+</ResponseField>
+<ResponseField name="metadata" type="null">
+  Metadata associated with the entity (optional).
+</ResponseField>
+<ResponseField name="projectId" type="string" required>
+  Unique identifier for the project associated with the entity.
+</ResponseField>
+<ResponseField name="createdAt" type="Date" required>
+  Timestamp indicating when the entity was created.
+</ResponseField>
+<ResponseField name="updatedAt" type="Date" required>
+  Timestamp indicating when the entity was last updated.
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

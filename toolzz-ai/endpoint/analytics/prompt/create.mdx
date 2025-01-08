@@ -1,0 +1,122 @@
+---
+title: 'Create a new version for the prompt'
+description: Endpoint to Create a new version for the prompt with the given `name`
+api: 'POST /api/public/v2/prompts'
+---
+
+<RequestExample>
+
+```json Payload Example
+{
+  "type": "chat",
+  "name": "string",
+  "prompt": [
+    {
+      "role": "string",
+      "content": "string"
+    }
+  ],
+  "config": null,
+  "labels": [
+    "string"
+  ],
+  "tags": [
+    "string"
+  ]
+}
+```
+</RequestExample>
+
+<Expandable title="Request Description">
+<ResponseField name="type" type="string" required>
+  Type of the interaction (e.g., "chat").
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the interaction or entity.
+</ResponseField>
+<ResponseField name="prompt" type="array" required>
+  List of prompts containing roles and content.
+  <Expandable title="items">
+    <ResponseField name="role" type="string" required>
+      Role of the participant in the interaction (e.g., "user", "assistant").
+    </ResponseField>
+    <ResponseField name="content" type="string" required>
+      Content of the prompt or message.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="config" type="null">
+  Configuration details (nullable).
+</ResponseField>
+<ResponseField name="labels" type="array" required>
+  List of labels associated with the interaction.
+  <Expandable title="items">
+    <ResponseField name="label" type="string" required>
+      A single label.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="tags" type="array" required>
+  List of tags associated with the interaction.
+  <Expandable title="items">
+    <ResponseField name="tag" type="string" required>
+      A single tag.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the create response
+
+<ResponseField name="type" type="string" required>
+  Type of the interaction (e.g., "chat").
+</ResponseField>
+<ResponseField name="name" type="string" required>
+  Name of the interaction or entity.
+</ResponseField>
+<ResponseField name="version" type="integer" required>
+  Version of the configuration.
+</ResponseField>
+<ResponseField name="config" type="null">
+  Configuration details (nullable).
+</ResponseField>
+<ResponseField name="labels" type="array" required>
+  List of labels associated with the interaction.
+  <Expandable title="items">
+    <ResponseField name="label" type="string" required>
+      A single label.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="tags" type="array" required>
+  List of tags associated with the interaction.
+  <Expandable title="items">
+    <ResponseField name="tag" type="string" required>
+      A single tag.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="prompt" type="array" required>
+  List of prompts containing roles and content.
+  <Expandable title="items">
+    <ResponseField name="role" type="string" required>
+      Role of the participant in the interaction (e.g., "user", "assistant").
+    </ResponseField>
+    <ResponseField name="content" type="string" required>
+      Content of the prompt or message.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

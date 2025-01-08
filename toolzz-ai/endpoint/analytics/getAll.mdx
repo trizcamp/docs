@@ -1,0 +1,83 @@
+---
+title: 'Get All Dataset Items'
+description: 'Endpoint to Get all dataset items'
+api: 'GET https://analytics.toolzz.ai/api/trpc/datasets.allDatasets'
+---
+<Expandable title="Resquest">
+<ResponseField name="datasetName" type="string">
+  Name of the dataset (optional).
+</ResponseField>
+<ResponseField name="sourceTraceId" type="string">
+  Trace ID of the data source (optional).
+</ResponseField>
+<ResponseField name="sourceObservationId" type="string">
+  Observation ID of the data source (optional).
+</ResponseField>
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (optional).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page (optional).
+</ResponseField>
+</Expandable>
+
+
+## Response Description 
+Below you will see the description of the get all dataset response
+
+<ResponseField name="data" type="array" required>
+  List of dataset items.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the dataset item.
+    </ResponseField>
+    <ResponseField name="status" type="enum" required>
+      Status of the dataset item. Allowed values: ACTIVE | ARCHIVED.
+    </ResponseField>
+    <ResponseField name="input" type="null">
+      Input data for the dataset item (optional).
+    </ResponseField>
+    <ResponseField name="expectedOutput" type="null">
+      Expected output data for the dataset item (optional).
+    </ResponseField>
+    <ResponseField name="metadata" type="null">
+      Metadata associated with the dataset item (optional).
+    </ResponseField>
+    <ResponseField name="sourceTraceId" type="string">
+      Trace ID of the data source (optional).
+    </ResponseField>
+    <ResponseField name="sourceObservationId" type="string">
+      Observation ID of the data source (optional).
+    </ResponseField>
+    <ResponseField name="datasetId" type="string" required>
+      Unique identifier of the associated dataset.
+    </ResponseField>
+    <ResponseField name="datasetName" type="string" required>
+      Name of the associated dataset.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Timestamp indicating when the dataset item was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date" required>
+      Timestamp indicating when the dataset item was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="number" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="number" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="number" required>
+      Total number of items.
+    </ResponseField>
+    <ResponseField name="totalPages" type="number" required>
+      Total number of pages.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+

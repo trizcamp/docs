@@ -1,0 +1,72 @@
+---
+title: 'Create a model'
+description: Endpoint to Create a model on toolzz analytics
+api: 'POST /api/public/models'
+authorization: none
+---
+
+<RequestExample>
+
+```json Payload Example
+{
+  "modelName": "string",
+  "matchPattern": "string",
+  "startDate": "1970-01-01T00:00:00.000Z",
+  "unit": "CHARACTERS",
+  "inputPrice": 0,
+  "outputPrice": 0,
+  "totalPrice": 0,
+  "tokenizerId": "string",
+  "tokenizerConfig": null
+}
+```
+</RequestExample>
+
+## Response Description 
+Below you will see the description of the Create a model response
+
+<ResponseField name="id" type="string" required>
+  Unique identifier of the item.
+</ResponseField>
+<ResponseField name="modelName" type="string" required>
+  Name of the model associated with the item.
+</ResponseField>
+<ResponseField name="matchPattern" type="string" required>
+  Match pattern used for the item.
+</ResponseField>
+<ResponseField name="startDate" type="date" required>
+  Start date for the item's configuration.
+</ResponseField>
+<ResponseField name="unit" type="string" required>
+  Unit type, e.g., CHARACTERS.
+</ResponseField>
+<ResponseField name="inputPrice" type="integer" required>
+  Price for input usage.
+</ResponseField>
+<ResponseField name="outputPrice" type="integer" required>
+  Price for output usage.
+</ResponseField>
+<ResponseField name="totalPrice" type="integer" required>
+  Total price for the item.
+</ResponseField>
+<ResponseField name="tokenizerId" type="string" required>
+  Identifier of the tokenizer.
+</ResponseField>
+<ResponseField name="tokenizerConfig" type="null">
+  Configuration of the tokenizer (nullable).
+</ResponseField>
+<ResponseField name="isLangfuseManaged" type="boolean" required>
+  Indicates whether the item is managed by Langfuse.
+</ResponseField>
+
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

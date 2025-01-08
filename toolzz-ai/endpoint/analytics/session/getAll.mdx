@@ -1,0 +1,66 @@
+---
+title: 'Get all session'
+description: Endpoint to get all session on toolzz analytics
+api: 'GET /api/public/sessions'
+authorization: none
+---
+<Expandable title="Request">
+<ResponseField name="page" type="integer">
+  Page number, starts at 1 (nullable).
+</ResponseField>
+<ResponseField name="limit" type="integer">
+  Limit of items per page (nullable). If you encounter API issues due to too large page sizes, try to reduce the limit.
+</ResponseField>
+<ResponseField name="fromTimestamp" type="date-time">
+  Optional filter to only include sessions created on or after a certain datetime (ISO 8601).
+</ResponseField>
+<ResponseField name="toTimestamp" type="date-time">
+  Optional filter to only include sessions created before a certain datetime (ISO 8601).
+</ResponseField>
+</Expandable>
+
+## Response Description 
+Below you will see the description of the create dataset response
+
+<ResponseField name="data" type="array" required>
+  List of records.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the record.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Timestamp indicating when the record was created.
+    </ResponseField>
+    <ResponseField name="projectId" type="string" required>
+      Identifier for the associated project.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Code Response
+Exemples of Response Code 
+
+<ResponseField name="200">
+  Request Successful Response
+</ResponseField>
+
+<ResponseField name="400">
+  Request Failure
+</ResponseField>

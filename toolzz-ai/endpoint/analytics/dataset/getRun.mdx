@@ -1,0 +1,56 @@
+---
+title: 'Get dataset runs'
+description: Endpoint to Get dataset runs on Toolzz Analytics
+api: 'GET https:///api/public/datasets/{datasetName}/runs'
+authorization: none
+---
+
+## Response Description 
+Below you will see the description of to Get a dataset run and its items response
+
+<ResponseField name="data" type="array" required>
+  List of dataset entities.
+  <Expandable title="properties">
+    <ResponseField name="id" type="string" required>
+      Unique identifier for the dataset entity.
+    </ResponseField>
+    <ResponseField name="name" type="string" required>
+      Name of the dataset entity.
+    </ResponseField>
+    <ResponseField name="description" type="string" required>
+      Description of the dataset entity.
+    </ResponseField>
+    <ResponseField name="metadata" type="object">
+      Metadata associated with the dataset entity (optional).
+    </ResponseField>
+    <ResponseField name="datasetId" type="string" required>
+      Unique identifier for the associated dataset.
+    </ResponseField>
+    <ResponseField name="datasetName" type="string" required>
+      Name of the associated dataset.
+    </ResponseField>
+    <ResponseField name="createdAt" type="Date" required>
+      Timestamp indicating when the dataset entity was created.
+    </ResponseField>
+    <ResponseField name="updatedAt" type="Date" required>
+      Timestamp indicating when the dataset entity was last updated.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+<ResponseField name="meta" type="object" required>
+  Pagination metadata.
+  <Expandable title="properties">
+    <ResponseField name="page" type="integer" required>
+      Current page number.
+    </ResponseField>
+    <ResponseField name="limit" type="integer" required>
+      Maximum number of items per page.
+    </ResponseField>
+    <ResponseField name="totalItems" type="integer" required>
+      Total number of items available.
+    </ResponseField>
+    <ResponseField name="totalPages" type="integer" required>
+      Total number of pages available.
+    </ResponseField>
+  </Expandable>
+</ResponseField>
